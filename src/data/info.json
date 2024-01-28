@@ -1,0 +1,1090 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "Customer Code": 301577,
+        "Dealer Name": "Maa Manasha Enterprises",
+        "Area": "PALONGHAT BAZAR PIN : 788116 SILCHAR",
+        "GST No": "18BSNPS5569N2ZH",
+        "Zone": "Cachar",
+        "Market": "Palonghat Bazar"
+      },
+      {
+        "id": 2,
+        "Customer Code": 300194,
+        "Dealer Name": "Roy Traders",
+        "Area": "SONAI ROAD, SILCHAR,",
+        "GST No": "18AGIPR3096F1Z1",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 3,
+        "Customer Code": 300855,
+        "Dealer Name": "Sankar Roy",
+        "Area": "N S AVENUE SILCHAR ASSAM PIN : 7880",
+        "GST No": "18ABKPR3499R1ZD",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 4,
+        "Customer Code": 301554,
+        "Dealer Name": "SHANTA TRADERS",
+        "Area": "NEAR CACHAR HIGH SCHOOL ITKHOLA SIL",
+        "GST No": "18AFWPL2433B2ZF",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 5,
+        "Customer Code": 300876,
+        "Dealer Name": "Steel Trade Agency",
+        "Area": "SONAI ROAD  SILCHAR PIN : 788006",
+        "GST No": "18BDLPP9401R1ZN",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 6,
+        "Customer Code": 300151,
+        "Dealer Name": "Bardhan Traders",
+        "Area": "DHOLAI BAZAR, DHOLAI",
+        "GST No": "18ARXPB8932E1ZE",
+        "Zone": "Cachar",
+        "Market": "Dholai Bazar"
+      },
+      {
+        "id": 7,
+        "Customer Code": 300766,
+        "Dealer Name": "Kalpana Trading",
+        "Area": "NATIONAL HIGHWAY SILCHAR",
+        "GST No": "18BECPD8554F1ZJ",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 8,
+        "Customer Code": 300379,
+        "Dealer Name": "Modern Sales Corporation",
+        "Area": "SONAI ROAD, SILCHAR",
+        "GST No": "18AARFM8422B2Z5",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 9,
+        "Customer Code": 300714,
+        "Dealer Name": "Purbasha Enterprise",
+        "Area": "SILCHAR ROAD BASKANDI",
+        "GST No": "18AQGPD0390N1ZO",
+        "Zone": "Cachar",
+        "Market": "Banskandi"
+      },
+      {
+        "id": 10,
+        "Customer Code": 302077,
+        "Dealer Name": "GHOSH ENTERPRISE(CACHAR)",
+        "Area": "ASSAM VIVEKANANDA ROAD SILCHAR CACH",
+        "GST No": "18AJFPG0125Q1Z5",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 11,
+        "Customer Code": 301359,
+        "Dealer Name": "A.I Traders",
+        "Area": "MOTINAGAR ROAD TOLARGRAM PART-1 SON",
+        "GST No": "18APWPH1779N1ZV",
+        "Zone": "Cachar",
+        "Market": "Sonai Bazar"
+      },
+      {
+        "id": 12,
+        "Customer Code": 300147,
+        "Dealer Name": "K.S.Stores",
+        "Area": "KABUGANJ, DHOLAI,",
+        "GST No": "18BPXPS7673Q1Z7",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 13,
+        "Customer Code": 301752,
+        "Dealer Name": "HAJI HARDWARE",
+        "Area": "DHONAHORI PT 2, SILCHAR, CACHAR, AS",
+        "GST No": "18BHQPB1491L1ZY",
+        "Zone": "Cachar",
+        "Market": "Silduby"
+      },
+      {
+        "id": 14,
+        "Customer Code": 301043,
+        "Dealer Name": "Tarat Trading Co.",
+        "Area": "HAILAKANDI ROAD, SILCHAR CACHAR PIN",
+        "GST No": "18ADIPT5877B1Z4",
+        "Zone": "Cachar",
+        "Market": "Silchar"
+      },
+      {
+        "id": 15,
+        "Customer Code": 301861,
+        "Dealer Name": "AVENUE INFRATEL",
+        "Area": "GROUND FLOOR HOUSE NO 33, LASKAR BU",
+        "GST No": "18ABTFA8751E1Z0",
+        "Zone": "Hailakandi/Karimganj",
+        "Market": "Hailakandi"
+      },
+      {
+        "id": 16,
+        "Customer Code": 301618,
+        "Dealer Name": "AJAY TRADERS",
+        "Area": "SILCHAR ROAD KARIMGANJ",
+        "GST No": "18ACRPB1705E1ZY",
+        "Zone": "Hailakandi/Karimganj",
+        "Market": "Karimganj"
+      },
+      {
+        "id": 17,
+        "Customer Code": 301266,
+        "Dealer Name": "Ms Enterprise ( Aizawl )",
+        "Area": "T-161 T- SECTION ITI VENG AIZAWL MI",
+        "GST No": "15ABMPZ6131G1ZD",
+        "Zone": "Mizoram",
+        "Market": "Aizawl"
+      },
+      {
+        "id": 18,
+        "Customer Code": 301883,
+        "Dealer Name": "LAXMI BHANDER",
+        "Area": "VILL + PO - MACHMARA, DSIT - UNAKOT",
+        "GST No": "16BLTPS1694B1ZP",
+        "Zone": "North Tripura",
+        "Market": "Machmara"
+      },
+      {
+        "id": 19,
+        "Customer Code": 301334,
+        "Dealer Name": "Sekhar Chandra Das",
+        "Area": "PANISAGAR BAZAR NORTH TRIPURA DHARM",
+        "GST No": "16AOIPD4985R1Z5",
+        "Zone": "North Tripura",
+        "Market": "Panisagar"
+      },
+      {
+        "id": 20,
+        "Customer Code": 301468,
+        "Dealer Name": "Ananda Traders",
+        "Area": "CHRILAM BAZAR WEST TRIPURA AGRTALA",
+        "GST No": "16AOJPD1222L1Z8",
+        "Zone": "South Tripura",
+        "Market": "Charilam"
+      },
+      {
+        "id": 21,
+        "Customer Code": 301337,
+        "Dealer Name": "Pal Brothers",
+        "Area": "VIP ROAD BESIDE BENGLADESH DEPUTY H",
+        "GST No": "16AJOPP5490J1ZJ",
+        "Zone": "West Tripura",
+        "Market": "Sidhai Mohanpur"
+      },
+      {
+        "id": 22,
+        "Customer Code": 301983,
+        "Dealer Name": "SOUHARDYA",
+        "Area": "MOHNPUR,AGARTALA",
+        "GST No": "16AGIPD4048D1ZT",
+        "Zone": "West Tripura",
+        "Market": "Agartala"
+      },
+      {
+        "id": 23,
+        "Customer Code": 302171,
+        "Dealer Name": "GOUTAM ROY",
+        "Area": "M.G. BAZAR, N.S ROAD, AGARTALA,  TR",
+        "GST No": "16AEXPR8164B1ZZ",
+        "Zone": "West Tripura",
+        "Market": "Agartala"
+      },
+      {
+        "id": 24,
+        "Customer Code": 301370,
+        "Dealer Name": "Tirupati Traders",
+        "Area": "HANUMAN MANDIR ROAD NAHARKATIA DIBR",
+        "GST No": "18AFVPA5511L1Z6",
+        "Zone": "Dibrugarh",
+        "Market": "Naharkatia"
+      },
+      {
+        "id": 25,
+        "Customer Code": 302172,
+        "Dealer Name": "ASSAM HARDWARE AND SUPPLIER",
+        "Area": "WARD NO 06, A.T ROAD PS-MORANHAT,PO",
+        "GST No": "18AFFPA0875F2ZP",
+        "Zone": "Dibrugarh",
+        "Market": "Moranhat"
+      },
+      {
+        "id": 26,
+        "Customer Code": 302252,
+        "Dealer Name": "GOLDEN OPPORTUNITY",
+        "Area": "AMBA COMPLEX 2ND FLOOR H.S.ROAD NR",
+        "GST No": "18AAYFG4549A1Z3",
+        "Zone": "Dibrugarh",
+        "Market": "Dibrugarh"
+      },
+      {
+        "id": 27,
+        "Customer Code": 300706,
+        "Dealer Name": "Bibek Kumar Jallan",
+        "Area": "WARD NO-2 BARPATHAR TOWN GOLAGHAT P",
+        "GST No": "18APWPJ6887P1ZE",
+        "Zone": "GOLAGHAT",
+        "Market": "Barpathar"
+      },
+      {
+        "id": 28,
+        "Customer Code": 300898,
+        "Dealer Name": "Brijlal Taparia",
+        "Area": "MAIN ROAD MERAPANI  DIST : GOLAGHAT",
+        "GST No": "18ADDPT2688R1ZH",
+        "Zone": "GOLAGHAT",
+        "Market": "Merapani"
+      },
+      {
+        "id": 29,
+        "Customer Code": 301560,
+        "Dealer Name": "MAA HARDWARE (DERGAON)",
+        "Area": "RAJABAHOR DERGAON DKD COLLEGE ROAD",
+        "GST No": "18AOUPP9575R2Z8",
+        "Zone": "GOLAGHAT",
+        "Market": "Dergaon"
+      },
+      {
+        "id": 30,
+        "Customer Code": 301246,
+        "Dealer Name": "Mahabir Hardware",
+        "Area": "SARUPATHAR NEAR SBI BANK DIST : GOL",
+        "GST No": "18AFWPA8812M1ZT",
+        "Zone": "GOLAGHAT",
+        "Market": "Sarupathar"
+      },
+      {
+        "id": 31,
+        "Customer Code": 300998,
+        "Dealer Name": "Satabdi Store",
+        "Area": "VILL: RAIDONGIA KAMABONDHA PO: SALI",
+        "GST No": "18CEWPS2603K1ZU",
+        "Zone": "GOLAGHAT",
+        "Market": "Kamarbandha"
+      },
+      {
+        "id": 32,
+        "Customer Code": 302013,
+        "Dealer Name": "SHYAM IRON HOUSE",
+        "Area": "Bengnakhowa",
+        "GST No": "18BJYPM5276L1Z3",
+        "Zone": "GOLAGHAT",
+        "Market": "Golaghat"
+      },
+      {
+        "id": 33,
+        "Customer Code": 302042,
+        "Dealer Name": "RAJKHOWA HARDWARE ( GOLAGHAT )",
+        "Area": "GOLAGHAT ASSAM",
+        "GST No": "18AHQPR9446L2Z7",
+        "Zone": "GOLAGHAT",
+        "Market": "Golaghat"
+      },
+      {
+        "id": 34,
+        "Customer Code": 302049,
+        "Dealer Name": "HARI OM ENTERPRISE",
+        "Area": "BOKAKHAT TOWN ASSAM",
+        "GST No": "18AFVPC7731A1ZH",
+        "Zone": "GOLAGHAT",
+        "Market": "Bokakhat"
+      },
+      {
+        "id": 35,
+        "Customer Code": 302050,
+        "Dealer Name": "B.R TRADE",
+        "Area": "NAOJAN GOLAGHAT ASSAM",
+        "GST No": "18ARMPA2028B1ZD",
+        "Zone": "GOLAGHAT",
+        "Market": "Naojan"
+      },
+      {
+        "id": 36,
+        "Customer Code": 301531,
+        "Dealer Name": "Ganesh Hardware & Electricals",
+        "Area": "TITABOR CHARIALI TITABOR JORHAT ASS",
+        "GST No": "18AHDPS9590F1ZS",
+        "Zone": "JORHAT",
+        "Market": "Titabor"
+      },
+      {
+        "id": 37,
+        "Customer Code": 301502,
+        "Dealer Name": "Jagdish Prasad Gopikishan",
+        "Area": "NH-37, TEOK, JORHAT, ASSAM 785112",
+        "GST No": "18ACNPB3261F1ZT",
+        "Zone": "JORHAT",
+        "Market": "Teok"
+      },
+      {
+        "id": 38,
+        "Customer Code": 301558,
+        "Dealer Name": "OM ENTERPRISE",
+        "Area": "WARD NO 6 KAMALABARI BONGAON ROAD M",
+        "GST No": "18AUUPM5171C2ZA",
+        "Zone": "JORHAT",
+        "Market": "Kamalabari, Majuli"
+      },
+      {
+        "id": 39,
+        "Customer Code": 301220,
+        "Dealer Name": "Assam Hardware",
+        "Area": "GAR ALI TITABAR DIST : JORHAT WARD",
+        "GST No": "18FLKPS0982K1ZA",
+        "Zone": "JORHAT",
+        "Market": "Titabar"
+      },
+      {
+        "id": 40,
+        "Customer Code": 300238,
+        "Dealer Name": "Mukuta Borah And Brothers",
+        "Area": "P.S BORHOLLA CHARIALI,PO-BORHOLLA",
+        "GST No": "18ASDPB7640Q1ZC",
+        "Zone": "JORHAT",
+        "Market": "Borholla"
+      },
+      {
+        "id": 41,
+        "Customer Code": 300162,
+        "Dealer Name": "Rukmani Enterprise",
+        "Area": "A.T ROAD, JORHAT",
+        "GST No": "18AJCPS4268F1ZZ",
+        "Zone": "JORHAT",
+        "Market": "Jorhat Town"
+      },
+      {
+        "id": 42,
+        "Customer Code": 301651,
+        "Dealer Name": "S.P ENTERPRISE",
+        "Area": "KOMAR BONDHA T.E JORHAT ASSAM",
+        "GST No": "18FDXPP4360R1Z7",
+        "Zone": "JORHAT",
+        "Market": "Dholajan, Jorhat"
+      },
+      {
+        "id": 43,
+        "Customer Code": 301349,
+        "Dealer Name": "Darisha Snaitang",
+        "Area": "MAWNGAP MAWSMAI MAWPLANG SHILLONG E",
+        "GST No": "17GBPPS7786K1ZB",
+        "Zone": "Meghalaya",
+        "Market": "Mawngap"
+      },
+      {
+        "id": 44,
+        "Customer Code": 300612,
+        "Dealer Name": "Humblestone Khongthaw",
+        "Area": "PYNURSLA EAST KHASI HILLS MEGHALAYA",
+        "GST No": "17BUPPK7395Q1ZC",
+        "Zone": "Meghalaya",
+        "Market": "Pynursla"
+      },
+      {
+        "id": 45,
+        "Customer Code": 301694,
+        "Dealer Name": "BANKERBORLANG DKHAR",
+        "Area": "45,PYNURSLA ,EAST KHASI HILLS, MEGH",
+        "GST No": "17BCHPD5714L1ZJ",
+        "Zone": "Meghalaya",
+        "Market": "Pynursla"
+      },
+      {
+        "id": 46,
+        "Customer Code": 301614,
+        "Dealer Name": "SANTINA MAWLONG",
+        "Area": "MAWLAT NONGLUM C MAWLAI NONGLUM SHI",
+        "GST No": "17DUTPM2440A1ZP",
+        "Zone": "Meghalaya"
+      },
+      {
+        "id": 47,
+        "Customer Code": 301103,
+        "Dealer Name": "Shri Tolistar Khongstia",
+        "Area": "PYNURSLA EAST KHASI HILLS, MEGHALAY",
+        "GST No": "17BTKPK2609H1ZN",
+        "Zone": "Meghalaya",
+        "Market": "Pynursla"
+      },
+      {
+        "id": 48,
+        "Customer Code": 300386,
+        "Dealer Name": "A Kharmih",
+        "Area": "3RD MILE, UPPER SHILLONG, MEGHALAYA",
+        "GST No": "17CLYPK8335D1ZL",
+        "Zone": "Meghalaya",
+        "Market": "Shillong"
+      },
+      {
+        "id": 49,
+        "Customer Code": 301860,
+        "Dealer Name": "KEPHAR JONES PATHAW",
+        "Area": "HNO 66 LUMKARTIC DIST EAST KHASI HI",
+        "GST No": "17CJXPP9047E1ZG",
+        "Zone": "Meghalaya",
+        "Market": "Shillong"
+      },
+      {
+        "id": 50,
+        "Customer Code": 300066,
+        "Dealer Name": "M Mawlong",
+        "Area": "3.5 MILE, UPPER SHILLONG",
+        "GST No": "17ATLPM9656N2ZM",
+        "Zone": "Meghalaya",
+        "Market": "Shillong"
+      },
+      {
+        "id": 51,
+        "Customer Code": 302145,
+        "Dealer Name": "PYNTNGEN MYRTHONG",
+        "Area": "MAWJRONG ELAKA LAITKROH EAST KHASI",
+        "GST No": "17DFWPM3574R1Z5",
+        "Zone": "Meghalaya",
+        "Market": "Mawjrong"
+      },
+      {
+        "id": 52,
+        "Customer Code": 302157,
+        "Dealer Name": "FELLERSON MARBANIANG",
+        "Area": "MARBANIANG, UMSEINIONG",
+        "GST No": "",
+        "Zone": "Meghalaya",
+        "Market": "Shillong"
+      },
+      {
+        "id": 53,
+        "Customer Code": 301887,
+        "Dealer Name": "LUCKYSTAR MALNGIANG",
+        "Area": "5 NONGKASEN WEST KHASI HILLS",
+        "GST No": "17EGOPM9470C1ZY",
+        "Zone": "Meghalaya",
+        "Market": "Jakren"
+      },
+      {
+        "id": 54,
+        "Customer Code": 301471,
+        "Dealer Name": "Essel Enterprises",
+        "Area": "NAHABARI DIMAPUR NAGALAND",
+        "GST No": "13ANMPA4902A3ZS",
+        "Zone": "Nagaland",
+        "Market": "Dimapur"
+      },
+      {
+        "id": 55,
+        "Customer Code": 301824,
+        "Dealer Name": "SANIKA HARDWARE",
+        "Area": "ASSAM VILL- BORHOLLOW KANDA , PS -",
+        "GST No": "18AUPPY4368N1ZC",
+        "Zone": "Nagaon-1",
+        "Market": "Morigaon District"
+      },
+      {
+        "id": 56,
+        "Customer Code": 302076,
+        "Dealer Name": "LOKNATH ENTERPRISE (JARGAON)",
+        "Area": "JHARGAON,MORIGAON,ASSAM",
+        "GST No": "18BEDPD6212H1ZV",
+        "Zone": "Nagaon-1",
+        "Market": "Morigaon District"
+      },
+      {
+        "id": 57,
+        "Customer Code": 301069,
+        "Dealer Name": "A.H.Hardware",
+        "Area": "GARAJAN BAZAR NAGAON ASSAM",
+        "GST No": "18AJPPH2579D1ZZ",
+        "Zone": "Nagaon-1",
+        "Market": "Nagaon District"
+      },
+      {
+        "id": 58,
+        "Customer Code": 301162,
+        "Dealer Name": "Bahar Hardware",
+        "Area": "ERABARI BAZAR PO: DAGAON PS: JURIA",
+        "GST No": "18ABRPU0749E1Z7",
+        "Zone": "Nagaon-1",
+        "Market": "Nagaon District"
+      },
+      {
+        "id": 59,
+        "Customer Code": 301365,
+        "Dealer Name": "Babu Hardware( Hojai)",
+        "Area": "CHANGMAJI BAZAR  DIST: HOJAI NAGAON",
+        "GST No": "18ACAPI0577L1ZH",
+        "Zone": "Nagaon-2",
+        "Market": "Hojai"
+      },
+      {
+        "id": 60,
+        "Customer Code": 300120,
+        "Dealer Name": "Shankar Madhab Hardware",
+        "Area": "WARD NO.4, KAMPUR, ASSAM",
+        "GST No": "18AUPPB7746K1Z1",
+        "Zone": "Nagaon-2",
+        "Market": "Kampur"
+      },
+      {
+        "id": 61,
+        "Customer Code": 301353,
+        "Dealer Name": "Shiv Shankar Hardware",
+        "Area": "KAMPUR BARUAH MARKET,NAGAON, ASSAM",
+        "GST No": "18AKBPB3315Q1Z6",
+        "Zone": "Nagaon-2",
+        "Market": "Kampur"
+      },
+      {
+        "id": 62,
+        "Customer Code": 301501,
+        "Dealer Name": "Siti Hardware",
+        "Area": "PASCHIM SAMORALI CHOUDHURY BAZAR MU",
+        "GST No": "18AOGPA5951G2Z0",
+        "Zone": "Nagaon-2",
+        "Market": "Hojai"
+      },
+      {
+        "id": 63,
+        "Customer Code": 301833,
+        "Dealer Name": "YOGESH ENTERPRISE",
+        "Area": ",SEVOKE WARD NO.10   SIKHADEEP,SHOP",
+        "GST No": "19AYHPG9728Q1ZG",
+        "Zone": "North Bengal"
+      },
+      {
+        "id": 64,
+        "Customer Code": 302365,
+        "Dealer Name": "SAPTRISHI INFRATRADE PRIVATE LTD",
+        "Area": "734006 EAST CHAYANPARA,SILIGURI,JAL",
+        "GST No": "19AANCS2255D1Z9",
+        "Zone": "North Bengal"
+      },
+      {
+        "id": 65,
+        "Customer Code": 302114,
+        "Dealer Name": "A.B HARDWARE STORE",
+        "Area": "JOYSAGAR SIVASAGAR ASSAM 785665",
+        "GST No": "18ACTPB0590M1Z6",
+        "Zone": "SIVSAGAR",
+        "Market": "Joysagar"
+      },
+      {
+        "id": 66,
+        "Customer Code": 302224,
+        "Dealer Name": "DEEPLING HARDWARE STORE",
+        "Area": "DEEPLING , SIVSAGAR ,PIN - 785691",
+        "GST No": "18AREPA0697A1Z8",
+        "Zone": "SIVSAGAR",
+        "Market": "Deepling"
+      },
+      {
+        "id": 67,
+        "Customer Code": 300525,
+        "Dealer Name": "A K Hardware Stores",
+        "Area": "UNIQUE COMPLEX, P.O- NAMSAI , DIST:",
+        "GST No": "12AJWPM9049C1ZY",
+        "Zone": "Tinsukia",
+        "Market": "Namsai"
+      },
+      {
+        "id": 68,
+        "Customer Code": 301886,
+        "Dealer Name": "GOYAL HARDWARE CO.",
+        "Area": "GANDHI PARK ROAD, NAUPUKHURI, TINSU",
+        "GST No": "18AABFG3321K1ZL",
+        "Zone": "Tinsukia",
+        "Market": "Tinsukia"
+      },
+      {
+        "id": 69,
+        "Customer Code": 301473,
+        "Dealer Name": "Lagan Hardware",
+        "Area": "TEZU HAYULIANG ANJAW ARUNACHAL PRAD",
+        "GST No": "12BBFPM8307P1ZD",
+        "Zone": "Tinsukia",
+        "Market": "Teazu"
+      },
+      {
+        "id": 70,
+        "Customer Code": 300680,
+        "Dealer Name": "Neog Hardware",
+        "Area": "MADHABPUR BAZAR PO BORDUMSA PIN 786",
+        "GST No": "18ADJPN9727F1Z4",
+        "Zone": "Tinsukia",
+        "Market": "Bordumsa"
+      },
+      {
+        "id": 71,
+        "Customer Code": 301706,
+        "Dealer Name": "SUBHAM ENTERPRISE",
+        "Area": "2ND MILE, NAMSAI, DIST- NAMSAI, AP",
+        "GST No": "12DRFPS8637N1Z3",
+        "Zone": "Tinsukia",
+        "Market": "Namsai"
+      },
+      {
+        "id": 72,
+        "Customer Code": 301529,
+        "Dealer Name": "Saikia Hardware",
+        "Area": "DIRAK NAMHOLLONG NAGAON,KAKOPATHAR",
+        "GST No": "18DLVPS1424K1ZE",
+        "Zone": "Tinsukia",
+        "Market": "Kakopathar"
+      },
+      {
+        "id": 73,
+        "Customer Code": 302011,
+        "Dealer Name": "DADAN PRASAD",
+        "Area": "Natun Balijan Sadia",
+        "GST No": "18BGWPP5086N1Z5",
+        "Zone": "Tinsukia",
+        "Market": "Sadia"
+      },
+      {
+        "id": 74,
+        "Customer Code": 300001,
+        "Dealer Name": "Ahmed Hardware",
+        "Area": "MANDIA, BARPETA ASSAM PIN NO : 7813",
+        "GST No": "18AGMPB0283E1ZO",
+        "Zone": "Lower Assam-1",
+        "Market": "Mandia"
+      },
+      {
+        "id": 75,
+        "Customer Code": 301734,
+        "Dealer Name": "JANATA HARDWARE",
+        "Area": "BARPETA ROAD",
+        "GST No": "18AMDPC7214M1Z1",
+        "Zone": "Lower Assam-1",
+        "Market": "Barpeta Road"
+      },
+      {
+        "id": 76,
+        "Customer Code": 300477,
+        "Dealer Name": "Barman Enterprise (Tihu)",
+        "Area": "KHALIHAGURI, TIHU",
+        "GST No": "18AMRPB5056C1Z5",
+        "Zone": "Lower Assam-1",
+        "Market": "Tihu"
+      },
+      {
+        "id": 77,
+        "Customer Code": 301237,
+        "Dealer Name": "J.B.Concrete Industry",
+        "Area": "KUMRIKATA, DIST-BAKSA",
+        "GST No": "18ARSPD4410C1Z4",
+        "Zone": "Lower Assam-1",
+        "Market": "Kumrikata"
+      },
+      {
+        "id": 78,
+        "Customer Code": 301679,
+        "Dealer Name": "MAA KAMAKHYA INDUSTRIES",
+        "Area": "JHELKAJHAR PART 2 BONGAIGAON 783381",
+        "GST No": "18AOWPV0707K1Z7",
+        "Zone": "Lower Assam-2",
+        "Market": "Bongaigaon"
+      },
+      {
+        "id": 79,
+        "Customer Code": 300524,
+        "Dealer Name": "Maruti Cements",
+        "Area": "M.G.ROAD, ABHAYAPURI, BONGAIGAON",
+        "GST No": "18AEFPP9440L2ZW",
+        "Zone": "Lower Assam-2",
+        "Market": "Abhayapuri"
+      },
+      {
+        "id": 80,
+        "Customer Code": 301280,
+        "Dealer Name": "S Islam Hardware ( Bongaigaon)",
+        "Area": "BONGAIGAON CHEDAMARI PS: JOGIGHOPA",
+        "GST No": "18AUVPA5289J1ZW",
+        "Zone": "Lower Assam-2",
+        "Market": "Balapara, Bongaigaon"
+      },
+      {
+        "id": 81,
+        "Customer Code": 301568,
+        "Dealer Name": "AZIZ HARDWARE",
+        "Area": "ANANDA NAGAR PO: BANGALIPARA PS: BI",
+        "GST No": "18AYAPR9210M1Z1",
+        "Zone": "Lower Assam-2",
+        "Market": "Bangalipara, Dhubri"
+      },
+      {
+        "id": 82,
+        "Customer Code": 300670,
+        "Dealer Name": "Combin Hardware",
+        "Area": "NAYAHAT, BARKANDA DHUBRI ASSAM",
+        "GST No": "18CINPK6872P1Z5",
+        "Zone": "Lower Assam-2",
+        "Market": "Nayahat, Dhubri"
+      },
+      {
+        "id": 83,
+        "Customer Code": 300683,
+        "Dealer Name": "Noor Hardware Stores",
+        "Area": "PANBARI, RANGAMATI GAURIPUR",
+        "GST No": "18ARYPA4099G3Z6",
+        "Zone": "Lower Assam-2",
+        "Market": "Panbari, Dhubri"
+      },
+      {
+        "id": 84,
+        "Customer Code": 301152,
+        "Dealer Name": "H.S Hardware Store   ( Korajhar )",
+        "Area": "VILL : TENGNER BHITA PO : TULSIBIL",
+        "GST No": "18CDIPS0570A1ZP",
+        "Zone": "Lower Assam-2",
+        "Market": "Tulsibil, Kokrajhar"
+      },
+      {
+        "id": 85,
+        "Customer Code": 300953,
+        "Dealer Name": "Shakti Hardware",
+        "Area": "PATHARGHAT SANTI NAGAR WD NO-03 KOK",
+        "GST No": "18EAXPS9707P1Z6",
+        "Zone": "Lower Assam-2",
+        "Market": "Kokrajhar"
+      },
+      {
+        "id": 86,
+        "Customer Code": 300360,
+        "Dealer Name": "Hamid Export International",
+        "Area": "SINGIMARI C/O ALHAI ABDUL HAMI, WES",
+        "GST No": "17AJCPS3157K1ZW",
+        "Zone": "Lower Assam-3",
+        "Market": "Singimari"
+      },
+      {
+        "id": 87,
+        "Customer Code": 301136,
+        "Dealer Name": "M.M Hardware (Garo Hills)",
+        "Area": "784104 VILL: PHULBARI PO: PHULBARI",
+        "GST No": "17BTMPM6994F1ZZ",
+        "Zone": "Lower Assam-3",
+        "Market": "Phulbari"
+      },
+      {
+        "id": 88,
+        "Customer Code": 301655,
+        "Dealer Name": "R.K.TRADERS",
+        "Area": "DHUBRI HATSINGIMARI TINALI BOTLOA P",
+        "GST No": "18ABRPU8302P1ZN",
+        "Zone": "Lower Assam-3",
+        "Market": "Hatsingimari"
+      },
+      {
+        "id": 89,
+        "Customer Code": 302098,
+        "Dealer Name": "HARDWARE STORE(MANKACHAR)",
+        "Area": "TUMNI SOUTH SALMARA MANKACHAR ASSAM",
+        "GST No": "18CMCPB5320C1ZR",
+        "Zone": "Lower Assam-3",
+        "Market": "Tumni"
+      },
+      {
+        "id": 90,
+        "Customer Code": 300881,
+        "Dealer Name": "Ali  Hardware Store",
+        "Area": "VILL- AMLAPATTI PO: LAKHIPUR DIST :",
+        "GST No": "18AJOPA0587B1ZF",
+        "Zone": "Lower Assam-3",
+        "Market": "Lakhipur, Goalpara"
+      },
+      {
+        "id": 91,
+        "Customer Code": 300895,
+        "Dealer Name": "Amir Hamza",
+        "Area": "783101 VILL+PO: KHALSABHITA PS: LAK",
+        "GST No": "18ACNPH8435M1ZY",
+        "Zone": "Lower Assam-3",
+        "Market": "Khalisabhita, Goalpara"
+      },
+      {
+        "id": 92,
+        "Customer Code": 300994,
+        "Dealer Name": "Jeevan Sathi Enterprise",
+        "Area": "ASSAM VILL: AMBARI PO: AMBARI BAZAR",
+        "GST No": "18AAMFJ3464H1Z2",
+        "Zone": "Lower Assam-3",
+        "Market": "Ambari, Goalpara"
+      },
+      {
+        "id": 93,
+        "Customer Code": 301363,
+        "Dealer Name": "Maa Santoshi Hardware",
+        "Area": "VILL/PO/PS: AGIA DIST: GOALPARA, AS",
+        "GST No": "18AITPN4048C2Z0",
+        "Zone": "Lower Assam-3",
+        "Market": "Agia, Goalpara"
+      },
+      {
+        "id": 94,
+        "Customer Code": 300236,
+        "Dealer Name": "Pancharatna Enterprise",
+        "Area": "BAMUNPARA, LAKHIPUR",
+        "GST No": "18AJDPR4415Q1ZN",
+        "Zone": "Lower Assam-3",
+        "Market": "Lakhipur, Goalpara"
+      },
+      {
+        "id": 95,
+        "Customer Code": 301023,
+        "Dealer Name": "B.M.Store",
+        "Area": "ORANG UDALGURI,BTAD ASSAM",
+        "GST No": "18ADHPM1516B2ZZ",
+        "Zone": "Darrang/Udalguri",
+        "Market": "Orang"
+      },
+      {
+        "id": 96,
+        "Customer Code": 300943,
+        "Dealer Name": "Choudhury  Hardware",
+        "Area": "VILL BHERBHERI BILL PO+PS :  BHERBH",
+        "GST No": "18AJOPC0685N2ZO",
+        "Zone": "Darrang/Udalguri",
+        "Market": "Bherbheri"
+      },
+      {
+        "id": 97,
+        "Customer Code": 301224,
+        "Dealer Name": "Modak Enterprise",
+        "Area": "VILL : DHANSIRI BAZAR DAKHIN CHUBA",
+        "GST No": "18DECPM4039A1ZU",
+        "Zone": "Darrang/Udalguri",
+        "Market": "Dhansiri Bazar"
+      },
+      {
+        "id": 98,
+        "Customer Code": 301729,
+        "Dealer Name": "AMIN TRADERS",
+        "Area": "KHARUPETIA DARRANG ASSAM",
+        "GST No": "18CJCPA8486K1ZS",
+        "Zone": "Darrang/Udalguri",
+        "Market": "Kharupetia"
+      },
+      {
+        "id": 99,
+        "Customer Code": 301538,
+        "Dealer Name": "S S Enterprise",
+        "Area": "HOUSE NO 152 KHARUPETIA  UDALGURI R",
+        "GST No": "18AIGPU3924R1ZD",
+        "Zone": "Darrang/Udalguri",
+        "Market": "Namati"
+      },
+      {
+        "id": 100,
+        "Customer Code": 302268,
+        "Dealer Name": "J.B  ASSOCIATE",
+        "Area": "MANGALDAI DARRANG",
+        "GST No": "18DHPPB5328K2ZY",
+        "Zone": "Darrang/Udalguri",
+        "Market": "xxx"
+      },
+      {
+        "id": 101,
+        "Customer Code": 300403,
+        "Dealer Name": "Bhawani Hardware",
+        "Area": "MAIN ROAD, INSIDE-UMCHAND SHERMALL,",
+        "GST No": "18AGYPR8812R1ZY",
+        "Zone": "Sonitpur-A",
+        "Market": "Dhekiajuli"
+      },
+      {
+        "id": 102,
+        "Customer Code": 300463,
+        "Dealer Name": "Deepika Enterprise",
+        "Area": "MAIN ROAD, LOKRA",
+        "GST No": "18AGGPS6794K1ZG",
+        "Zone": "Sonitpur-A",
+        "Market": "Lokra"
+      },
+      {
+        "id": 103,
+        "Customer Code": 301243,
+        "Dealer Name": "G. D Hardware",
+        "Area": "PO: SIRAJULI SONITPUR ASSAM 784149",
+        "GST No": "18BWWPD7056G1Z1",
+        "Zone": "Sonitpur-A",
+        "Market": "Sirajuli"
+      },
+      {
+        "id": 104,
+        "Customer Code": 300447,
+        "Dealer Name": "Shree Pawan Enterprise",
+        "Area": "BHALUKPONG ROAD, BALIPARA",
+        "GST No": "18AAHPP5720H2ZK",
+        "Zone": "Sonitpur-A",
+        "Market": "Balipara"
+      },
+      {
+        "id": 105,
+        "Customer Code": 302048,
+        "Dealer Name": "B M HARDWARE",
+        "Area": "Dhekiajuli Sonitpur Assam",
+        "GST No": "18DBAPS4922R1ZX",
+        "Zone": "Sonitpur-A",
+        "Market": "Dhekiajuli"
+      },
+      {
+        "id": 106,
+        "Customer Code": 300545,
+        "Dealer Name": "Dubey Steel",
+        "Area": "BISWANATH CHARALI, SONITPUR,ASSAM",
+        "GST No": "18AEOPD9503M1Z2",
+        "Zone": "Sonitpur-B",
+        "Market": "Biswanath Chariali"
+      },
+      {
+        "id": 107,
+        "Customer Code": 301223,
+        "Dealer Name": "J.P Hardware ( Biswanath Charali)",
+        "Area": "BISWANATH CHARALI SONITPUR ASSAM PI",
+        "GST No": "18AFDPJ9352C1ZJ",
+        "Zone": "Sonitpur-B",
+        "Market": "Biswanath Chariali"
+      },
+      {
+        "id": 108,
+        "Customer Code": 300795,
+        "Dealer Name": "Paban Das",
+        "Area": "PUB MAZIRGAON PO- BHATTAPARA",
+        "GST No": "18BHGPD5247L1Z4",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 109,
+        "Customer Code": 301504,
+        "Dealer Name": "Popular Enterprise",
+        "Area": "GOROIMARI KAMRUP ASSAM  PIN 781137",
+        "GST No": "18AFNPH4629E1ZD",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 110,
+        "Customer Code": 300636,
+        "Dealer Name": "Raja Enterprises",
+        "Area": "BAMUNI GAON CAMP(PO) P.S-BOKO PIN:",
+        "GST No": "18ADAPT9458J1ZU",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 111,
+        "Customer Code": 301526,
+        "Dealer Name": "S.B Enterpries",
+        "Area": "CHHAYGAON KAMRUP ASSAM",
+        "GST No": "18AJUPR4484Q1ZT",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 112,
+        "Customer Code": 301514,
+        "Dealer Name": "A Enterprise",
+        "Area": "STATION ROAD WARD NO-2 RANGIA, ASSA",
+        "GST No": "18ADBPH5103M1ZP",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 113,
+        "Customer Code": 300756,
+        "Dealer Name": "Bhagabati Enterprise",
+        "Area": "GORESWAR BAZAR ROAD BAKSA",
+        "GST No": "18AJTPB8530C1Z8",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 114,
+        "Customer Code": 300088,
+        "Dealer Name": "Poddar Steel Trading",
+        "Area": "SAWKUCHI LOKHRA ROAD",
+        "GST No": "18AAJFP4493R1Z7",
+        "Zone": "Kamrup Rural",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 115,
+        "Customer Code": 301895,
+        "Dealer Name": "HUSSAIN ENTERPRISE",
+        "Area": "CHAMATAPATHAR, KAMRUP",
+        "GST No": "18AFEPH2604C1Z3",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 116,
+        "Customer Code": 301038,
+        "Dealer Name": "Maa Durga Enterprise",
+        "Area": "VIDYA MANDIR PATH HOUSE NO.27 BHETA",
+        "GST No": "18AQLPB3480A3Z5",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 117,
+        "Customer Code": 301478,
+        "Dealer Name": "Neelkanth Enterprise",
+        "Area": "HOCKEY STADIUM  ROAD SAWKUCHI  GUWA",
+        "GST No": "18AJZPA4100F3ZD",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 118,
+        "Customer Code": 301563,
+        "Dealer Name": "MEENAKSHI ENTERPRISE",
+        "Area": "NH 37 BHARAKUCHI DIST KAMRUP URBAN",
+        "GST No": "18BCOPA3982Q1ZT",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 119,
+        "Customer Code": 300404,
+        "Dealer Name": "Sonapur Hardware Centre",
+        "Area": "SONAPUR OLD MARKET;SONAPUR;KAMRUP",
+        "GST No": "18ADOPD8734F1ZC",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 120,
+        "Customer Code": 300703,
+        "Dealer Name": "Silver Trade Centre",
+        "Area": "DAKHIN GAON TINIALI KAHILIPARA GHY-",
+        "GST No": "18AKQPK2342H2ZZ",
+        "Zone": "Kamrup Urban",
+        "Market": "Kamrup"
+      },
+      {
+        "id": 121,
+        "Customer Code": 301125,
+        "Dealer Name": "Bhuyan & Sons",
+        "Area": "VILL: JARABRI PO:JARABARI DIST : LA",
+        "GST No": "18AZLPB8419Q1ZN",
+        "Zone": "Nlp",
+        "Market": "Jarabari, NLP"
+      }
+    ]
+  }
