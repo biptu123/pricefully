@@ -1,84 +1,87 @@
 import React, { useState } from "react";
-import { Table } from "react-bootstrap";
-import { CiShop } from "react-icons/ci";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from "react-icons/io";
-import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useFirbase } from "../../context/Firebase";
 
 const SideMenu = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData } = firebase;
+  const { data, isLoggedIn, logoutUser, signinWithGoogle } = firebase;
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+
+  const location = useLocation();
   const navigate = useNavigate();
   return (
-    <>
-      <Sidebar
-        style={{
-          height: "100vh",
-          position: "fixed",
-          zIndex: 2,
-          backgroundColor: "white",
-        }}
-        collapsed={!isSidebarOpen}
-      >
-        <Menu>
-          <div
-            style={{
-              textAlign: "end",
-              display: "flex",
-              justifyContent: "flex-end",
-            }}
-          >
-            <MenuItem onClick={toggleSidebar}>
-              {isSidebarOpen ? (
-                <IoIosArrowDropleftCircle />
-              ) : (
-                <IoIosArrowDroprightCircle />
-              )}
-            </MenuItem>
-          </div>
-          <MenuItem onClick={() => navigate("/dashboard")} icon={<CiShop />}>
-            Dashboard
-          </MenuItem>
-          <MenuItem onClick={() => navigate("/see-all")} icon={<CiShop />}>
-            All
-          </MenuItem>
-          <MenuItem onClick={() => navigate("/zone")} icon={<CiShop />}>
-            Zone
-          </MenuItem>
-          <MenuItem onClick={() => navigate("/market")} icon={<CiShop />}>
-            Market
-          </MenuItem>
-          <div style={{ height: "300px", overflowY: "scroll" }}>
-            <Table striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>Dealer Name</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data &&
-                  Object.keys(data).map((key) => (
-                    <tr key={key}>
-                      <td>{data[key]["Dealer Name"]}</td>
-                      <td>{data[key]["price"]}</td>
-                    </tr>
-                  ))}
-              </tbody>
-            </Table>
-          </div>
-        </Menu>
-      </Sidebar>
-    </>
+    <div className="sidebar">
+      <ul>
+        <li
+          className={location.pathname == "/dashboard" ? "dashboard" : null}
+          onClick={() => navigate("/dashboard")}
+        >
+          <i className="fa fa-dashcube" />
+          <a>Dashboard</a>
+        </li>
+        <li
+          className={location.pathname == "/zone" ? "dashboard" : null}
+          onClick={() => navigate("/zone")}
+        >
+          <i className="fa fa-money" />
+          <a>Zone</a>
+        </li>
+        <li
+          className={location.pathname == "/market" ? "dashboard" : null}
+          onClick={() => navigate("/market")}
+        >
+          <i className="fa fa-envelope-o" />
+          <a>Market</a>
+        </li>
+        <li
+          className={location.pathname == "/see-all" ? "dashboard" : null}
+          onClick={() => navigate("/see-all")}
+        >
+          <i className="fa fa-credit-card-alt" />
+          <a>All</a>
+        </li>
+        {isLoggedIn ? (
+          <li onClick={logoutUser}>
+            <i className="fa fa-credit-card-alt" />
+            <a>Logout</a>
+          </li>
+        ) : (
+          <li onClick={signinWithGoogle}>
+            <i className="fa fa-credit-card-alt" />
+            <a>Login with google</a>
+          </li>
+        )}
+      </ul>
+      <div className="grid">
+        <div className="grid-container">
+          <table>
+            <thead>
+              <tr className="header">
+                <th>
+                  Dealer Name<div>Dealer Name</div>
+                </th>
+                <th>
+                  Price<div>Price</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {data &&
+                Object.keys(data).map((key) => (
+                  <tr key={key}>
+                    <td>{data[key]["Dealer Name"]}</td>
+                    <td>{data[key]["price"]}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   );
 };
 

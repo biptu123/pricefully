@@ -34,6 +34,7 @@ export const useFirbase = () => useContext(FirebaseContext);
 export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) setUser(user);
@@ -49,7 +50,21 @@ export const FirebaseProvider = (props) => {
   const signinUser = (email, password) =>
     signInWithEmailAndPassword(firebaseAuth, email, password);
 
-  const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider);
+  const signinWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(firebaseAuth, googleProvider);
+      // Handle successful authentication
+      alert(`Hello ${result?.user?.displayName}`);
+    } catch (error) {
+      // Handle error, including the specific error code
+      if (error.code === "auth/cancelled-popup-request") {
+        alert("Popup request cancelled by the user");
+        // Provide feedback to the user, e.g., ask them to try again
+      } else {
+        alert("Authentication error:", error);
+      }
+    }
+  };
 
   const logoutUser = () => {
     firebaseAuth.signOut();
@@ -83,6 +98,8 @@ export const FirebaseProvider = (props) => {
     logoutUser,
     putData,
     updateData,
+    search,
+    setSearch,
   };
 
   return (

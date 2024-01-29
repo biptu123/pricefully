@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -14,9 +14,6 @@ import Market from "./pages/Market";
 function App() {
   return (
     <>
-      <div style={{ marginBottom: "60px" }}>
-        <Header />
-      </div>
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/login" Component={Login} />

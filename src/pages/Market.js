@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
-import SideMenu from "../components/SideMenu";
-import { Button, Card } from "react-bootstrap";
 import Layout from "../components/Layout";
 
 const Market = () => {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData } = firebase;
+  const { data, isLoggedIn, updateData, search, setSearch } = firebase;
   const [markets, setMarkets] = useState([]);
   const [viewMarket, setViewMarket] = useState(null);
   useEffect(() => {
@@ -40,73 +38,68 @@ const Market = () => {
     <Layout>
       {viewMarket ? (
         <>
-          <h1 className="text-center">{viewMarket} Market</h1>
+          {isLoggedIn ? (
+            <form className="col chi" onSubmit={updateMarketPrice}>
+              <input type="text" placeholder="Update price" id={viewMarket} />
+              <button className="button-70" type="submit">
+                Update
+              </button>
+              <button className="button-70" onClick={() => setViewMarket(null)}>
+                Goback
+              </button>
+            </form>
+          ) : (
+            <form className="col chi">
+              <button className="button-70" onClick={() => setViewMarket(null)}>
+                Goback
+              </button>
+            </form>
+          )}
+          <div className="row row-2">
+            {data &&
+              Object.keys(data).map((key) =>
+                data[key].Market === viewMarket &&
+                data[key]["Dealer Name"]
+                  .toUpperCase()
+                  .includes(search.toUpperCase()) ? (
+                  <div className="col" key={key}>
+                    <div className="total-invoice">
+                      <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
+                      <h5 className="cardtittle">{data[key]["GST No"]}</h5>
+                      <h5 className="cardtittle">{data[key]["Zone"]}</h5>
 
-          <div className="d-flex flex-column">
-            {isLoggedIn ? (
-              <form
-                className="d-flex justify-content-center"
-                onSubmit={updateMarketPrice}
-              >
-                <input type="text" placeholder="Update price" id={viewMarket} />
-                <Button variant="primary" type="submit">
-                  Update
-                </Button>
-                <Button variant="danger" onClick={() => setViewMarket(null)}>
-                  Goback
-                </Button>
-              </form>
-            ) : (
-              <form className="d-flex justify-content-center">
-                <Button variant="danger" onClick={() => setViewMarket(null)}>
-                  Goback
-                </Button>
-              </form>
-            )}
-            <div className="d-flex flex-wrap justify-content-between">
-              {data &&
-                Object.keys(data).map((key) =>
-                  data[key].Market === viewMarket ? (
-                    <Card className="my-3" style={{ width: "18rem" }} key={key}>
-                      <Card.Body>
-                        <Card.Title>{data[key]["Dealer Name"]}</Card.Title>
-                        <Card.Text>
-                          {data[key] &&
-                            Object.keys(data[key]).map((ikey) => (
-                              <div key={ikey}>
-                                <b>{ikey}: </b> {data[key][ikey]}
-                              </div>
-                            ))}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  ) : null
-                )}
-            </div>
+                      <div className="price">₹{data[key]["price"]}</div>
+                    </div>
+                  </div>
+                ) : null
+              )}
           </div>
         </>
       ) : (
-        <>
-          <h1 className="text-center">All Markets</h1>
-
-          <div className="d-flex flex-wrap justify-content-between">
-            {markets &&
-              markets.map((market) => (
-                <Card className="my-3" style={{ width: "18rem" }} key={market}>
-                  <Card.Body>
-                    <Card.Title>{market}</Card.Title>
-                    <Card.Text></Card.Text>
-                    <Button
-                      variant="success"
-                      onClick={() => setViewMarket(market)}
-                    >
-                      View
-                    </Button>
-                  </Card.Body>
-                </Card>
-              ))}
-          </div>
-        </>
+        <div className="row row-2">
+          {markets &&
+            markets.map(
+              (market) =>
+                market &&
+                market.toUpperCase().includes(search.toUpperCase()) && (
+                  <div className="col" key={market}>
+                    <div className="total-invoice">
+                      <h3 className="cardtittle">{market}</h3>
+                      <button
+                        className="button-70"
+                        role="button"
+                        onClick={() => {
+                          setSearch("");
+                          setViewMarket(market);
+                        }}
+                      >
+                        View
+                      </button>
+                    </div>
+                  </div>
+                )
+            )}
+        </div>
       )}
     </Layout>
   );

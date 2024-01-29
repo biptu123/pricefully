@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 
 function All() {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData } = firebase;
+  const { data, isLoggedIn, updateData, search } = firebase;
 
   const updatePrice = (e) => {
     e.preventDefault();
@@ -23,32 +23,36 @@ function All() {
 
   return (
     <Layout>
-      <h1 className="text-center">All Data</h1>
-      <div className="d-flex flex-wrap justify-content-between">
+      <div className="row row-2">
         {data &&
-          Object.keys(data).map((key) => (
-            <Card className="my-3" style={{ width: "18rem" }} key={key}>
-              <Card.Body>
-                <Card.Title>{data[key]["Dealer Name"]}</Card.Title>
-                <Card.Text>
-                  {data[key] &&
-                    Object.keys(data[key]).map((ikey) => (
-                      <div key={ikey}>
-                        <b>{ikey}: </b> {data[key][ikey]}
-                      </div>
-                    ))}
-                </Card.Text>
-                {isLoggedIn ? (
-                  <form className="d-flex" onSubmit={updatePrice}>
-                    <input type="text" placeholder="Update price" id={key} />
-                    <Button variant="primary" type="submit">
-                      Update
-                    </Button>
-                  </form>
-                ) : null}
-              </Card.Body>
-            </Card>
-          ))}
+          Object.keys(data).map(
+            (key) =>
+              data[key]["Dealer Name"]
+                .toUpperCase()
+                .includes(search.toUpperCase()) && (
+                <div className="col" key={key}>
+                  <div className="total-invoice">
+                    <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
+                    <h5 className="cardtittle">{data[key]["GST No"]}</h5>
+                    <h5 className="cardtittle">{data[key]["Zone"]}</h5>
+
+                    <div className="price">₹{data[key]["price"]}</div>
+                    {isLoggedIn ? (
+                      <form className="chi" onSubmit={updatePrice}>
+                        <input type="text" id={key} />
+                        <button
+                          className="button-70"
+                          role="button"
+                          type="submit"
+                        >
+                          Edit
+                        </button>
+                      </form>
+                    ) : null}
+                  </div>
+                </div>
+              )
+          )}
       </div>
     </Layout>
   );

@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 
 const Zone = () => {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData } = firebase;
+  const { data, isLoggedIn, updateData, search, setSearch } = firebase;
   const [zones, setZones] = useState([]);
   const [viewZone, setViewZone] = useState(null);
   useEffect(() => {
@@ -40,67 +40,67 @@ const Zone = () => {
     <Layout>
       {viewZone ? (
         <>
-          <h1 className="text-center">{viewZone} Zone</h1>
-          <div className="d-flex flex-column">
-            {isLoggedIn ? (
-              <form
-                className="d-flex justify-content-center"
-                onSubmit={updateZonePrice}
-              >
-                <input type="text" placeholder="Update price" id={viewZone} />
-                <Button variant="primary" type="submit">
-                  Update
-                </Button>
-                <Button variant="danger" onClick={() => setViewZone(null)}>
-                  Goback
-                </Button>
-              </form>
-            ) : (
-              <form className="d-flex justify-content-center">
-                <Button variant="danger" onClick={() => setViewZone(null)}>
-                  Goback
-                </Button>
-              </form>
-            )}
-            <div className="d-flex flex-wrap justify-content-between">
-              {data &&
-                Object.keys(data).map((key) =>
-                  data[key].Zone === viewZone ? (
-                    <Card className="my-3" style={{ width: "18rem" }} key={key}>
-                      <Card.Body>
-                        <Card.Title>{data[key]["Dealer Name"]}</Card.Title>
-                        <Card.Text>
-                          {data[key] &&
-                            Object.keys(data[key]).map((ikey) => (
-                              <div key={ikey}>
-                                <b>{ikey}: </b> {data[key][ikey]}
-                              </div>
-                            ))}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  ) : null
-                )}
-            </div>
+          {isLoggedIn ? (
+            <form className="col chi" onSubmit={updateZonePrice}>
+              <input type="text" placeholder="Update price" id={viewZone} />
+              <button className="button-70" type="submit">
+                Update
+              </button>
+              <button className="button-70" onClick={() => setViewZone(null)}>
+                Goback
+              </button>
+            </form>
+          ) : (
+            <form className="col chi">
+              <button className="button-70" onClick={() => setViewZone(null)}>
+                Goback
+              </button>
+            </form>
+          )}
+          <div className="row row-2">
+            {data &&
+              Object.keys(data).map((key) =>
+                data[key].Zone === viewZone &&
+                data[key]["Dealer Name"]
+                  .toUpperCase()
+                  .includes(search.toUpperCase()) ? (
+                  <div className="col" key={key}>
+                    <div className="total-invoice">
+                      <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
+                      <h5 className="cardtittle">{data[key]["GST No"]}</h5>
+                      <h5 className="cardtittle">{data[key]["Zone"]}</h5>
+
+                      <div className="price">₹{data[key]["price"]}</div>
+                    </div>
+                  </div>
+                ) : null
+              )}
           </div>
         </>
       ) : (
         <>
-          <h1 className="text-center">All Zones</h1>
-
-          <div className="d-flex flex-wrap justify-content-between">
+          <div className="row row-2">
             {zones &&
-              zones.map((zone) => (
-                <Card className="my-3" style={{ width: "18rem" }} key={zone}>
-                  <Card.Body>
-                    <Card.Title>{zone}</Card.Title>
-                    <Card.Text></Card.Text>
-                    <Button variant="success" onClick={() => setViewZone(zone)}>
-                      View
-                    </Button>
-                  </Card.Body>
-                </Card>
-              ))}
+              zones.map(
+                (zone) =>
+                  zone.toUpperCase().includes(search.toUpperCase()) && (
+                    <div className="col" key={zone}>
+                      <div className="total-invoice">
+                        <h3 className="cardtittle">{zone}</h3>
+                        <button
+                          className="button-70"
+                          role="button"
+                          onClick={() => {
+                            setSearch("");
+                            setViewZone(zone);
+                          }}
+                        >
+                          View
+                        </button>
+                      </div>
+                    </div>
+                  )
+              )}
           </div>
         </>
       )}
