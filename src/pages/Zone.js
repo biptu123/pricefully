@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
 import { Button, Card } from "react-bootstrap";
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 const Zone = () => {
   const firebase = useFirbase();
@@ -36,6 +37,12 @@ const Zone = () => {
       }
     });
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [firebase, navigate]);
   return (
     <Layout>
       {viewZone ? (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
 import { Button, Card } from "react-bootstrap";
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 function All() {
   const firebase = useFirbase();
@@ -20,6 +21,13 @@ function All() {
     if (!confirmation) return;
     updateData(key, newData);
   };
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [firebase, navigate]);
 
   return (
     <Layout>

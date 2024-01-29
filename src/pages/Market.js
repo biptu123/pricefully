@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 const Market = () => {
   const firebase = useFirbase();
@@ -34,6 +35,12 @@ const Market = () => {
       }
     });
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  }, [firebase, navigate]);
   return (
     <Layout>
       {viewMarket ? (

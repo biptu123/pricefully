@@ -12,14 +12,15 @@ import {
 import { getDatabase, set, ref, get, child, onValue } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxD_ii3p12OLBcDjZWOgVnAqkyeMOLQqE",
-  authDomain: "cement-project.firebaseapp.com",
-  projectId: "cement-project",
-  storageBucket: "cement-project.appspot.com",
-  messagingSenderId: "1065481591862",
-  appId: "1:1065481591862:web:84c3253f94db5dc3cbcc97",
-  measurementId: "G-JYDE9BGGFE",
-  databaseURL: "https://cement-project-default-rtdb.firebaseio.com",
+  apiKey: "AIzaSyDXwvfqM--Mo5dxdzW9qG9QrU_NTkkx1ec",
+  authDomain: "set-cement-price.firebaseapp.com",
+  databaseURL: "https://set-cement-price-default-rtdb.firebaseio.com",
+  projectId: "set-cement-price",
+  storageBucket: "set-cement-price.appspot.com",
+  messagingSenderId: "22792679680",
+  appId: "1:22792679680:web:01553bb0f1114acf7103e5",
+  measurementId: "G-J97YTG4YV2",
+  databaseURL: "https://set-cement-price-default-rtdb.firebaseio.com/",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -35,6 +36,7 @@ export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
+  const [modules, setModules] = useState(null);
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) setUser(user);
@@ -42,6 +44,9 @@ export const FirebaseProvider = (props) => {
     });
     onValue(ref(database, "test"), (snapshot) => {
       setData(snapshot.val());
+    });
+    onValue(ref(database, "modules"), (snapshot) => {
+      setModules(snapshot.val());
     });
   }, []);
   const signupUser = (email, password) =>
@@ -53,13 +58,10 @@ export const FirebaseProvider = (props) => {
   const signinWithGoogle = async () => {
     try {
       const result = await signInWithPopup(firebaseAuth, googleProvider);
-      // Handle successful authentication
       alert(`Hello ${result?.user?.displayName}`);
     } catch (error) {
-      // Handle error, including the specific error code
       if (error.code === "auth/cancelled-popup-request") {
         alert("Popup request cancelled by the user");
-        // Provide feedback to the user, e.g., ask them to try again
       } else {
         alert("Authentication error:", error);
       }
@@ -75,8 +77,18 @@ export const FirebaseProvider = (props) => {
 
   const updateData = (key, newData) => {
     const dataRef = ref(database, `test/${key}`);
+    const priceRef = ref(database, `modules/module${key}`);
 
     try {
+      let price = parseInt(newData.price);
+      let newPrice = {};
+      for (let i = 3; i > 0; i--) {
+        let digit = price % 10;
+        console.log(digit);
+        newPrice = { ...newPrice, [`integer${i}`]: digit };
+        price = Math.floor(price / 10);
+      }
+      set(priceRef, newPrice);
       set(dataRef, newData);
       console.log("Data updated successfully!");
     } catch (error) {
@@ -85,8 +97,6 @@ export const FirebaseProvider = (props) => {
   };
 
   const isLoggedIn = user ? true : false;
-
-  const baseAddress = "A6mo2jctRRgwZbf8NfFdpwq8SJ03";
 
   const value = {
     signupUser,
