@@ -10,6 +10,11 @@ function All() {
 
   const updatePrice = (e) => {
     e.preventDefault();
+    if (!containsOnlyNumbers(e.target[0].value)) {
+      window.alert("Please enter only numbers");
+      e.target[0].value = "";
+      return;
+    }
     const key = e.target[0].id;
     const price = Number(e.target[0].value);
     const newData = {
@@ -20,7 +25,14 @@ function All() {
     const confirmation = window.confirm(`Price will be updated to ${price}`);
     if (!confirmation) return;
     updateData(key, newData);
+    e.target[0].value = "";
   };
+
+  function containsOnlyNumbers(str) {
+    const regex = /^[0-9]+$/;
+
+    return regex.test(str);
+  }
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -47,7 +59,12 @@ function All() {
                     <div className="price">₹{data[key]["price"]}</div>
                     {isLoggedIn ? (
                       <form className="chi" onSubmit={updatePrice}>
-                        <input type="text" id={key} />
+                        <input
+                          type="text"
+                          id={key}
+                          maxLength={3}
+                          title="Price should be a three-digit number"
+                        />
                         <button
                           className="button-70"
                           role="button"

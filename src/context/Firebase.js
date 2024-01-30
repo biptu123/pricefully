@@ -36,7 +36,7 @@ export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
-  const [modules, setModules] = useState(null);
+  const [tableData, setTableData] = useState(null);
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) setUser(user);
@@ -44,10 +44,11 @@ export const FirebaseProvider = (props) => {
     });
     onValue(ref(database, "test"), (snapshot) => {
       setData(snapshot.val());
+      setTableData(snapshot.val());
     });
-    onValue(ref(database, "modules"), (snapshot) => {
-      setModules(snapshot.val());
-    });
+    // onValue(ref(database, "modules"), (snapshot) => {
+    //   setModules(snapshot.val());
+    // });
   }, []);
   const signupUser = (email, password) =>
     createUserWithEmailAndPassword(firebaseAuth, email, password);
@@ -84,7 +85,6 @@ export const FirebaseProvider = (props) => {
       let newPrice = {};
       for (let i = 3; i > 0; i--) {
         let digit = price % 10;
-        console.log(digit);
         newPrice = { ...newPrice, [`integer${i}`]: digit };
         price = Math.floor(price / 10);
       }
@@ -110,6 +110,8 @@ export const FirebaseProvider = (props) => {
     updateData,
     search,
     setSearch,
+    tableData,
+    setTableData,
   };
 
   return (

@@ -5,7 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 const Market = () => {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData, search, setSearch } = firebase;
+  const {
+    data,
+    isLoggedIn,
+    updateData,
+    search,
+    setSearch,
+    setTableData,
+    tableData,
+  } = firebase;
   const [markets, setMarkets] = useState([]);
   const [viewMarket, setViewMarket] = useState(null);
   useEffect(() => {
@@ -16,8 +24,36 @@ const Market = () => {
       setMarkets(uniqueMarkets);
     }
   }, [data]);
+  useEffect(() => {
+    let newTableData = {};
+
+    if (viewMarket) {
+      Object.keys(data).forEach((key) => {
+        if (data[key].Market === viewMarket) {
+          newTableData = {
+            ...newTableData,
+            [key]: data[key],
+          };
+        }
+      });
+    } else {
+      newTableData = data;
+    }
+
+    // Check if newTableData is different before updating
+    if (JSON.stringify(newTableData) !== JSON.stringify(tableData)) {
+      setTableData(newTableData);
+    }
+  }, [viewMarket, data, tableData, setTableData]);
+
   const updateMarketPrice = (e) => {
     e.preventDefault();
+
+    if (!containsOnlyNumbers(e.target[0].value)) {
+      window.alert("Please enter only numbers");
+      e.target[0].value = "";
+      return;
+    }
     const market = e.target[0].id;
     const price = Number(e.target[0].value);
     const confirmation = window.confirm(
@@ -32,9 +68,15 @@ const Market = () => {
         };
 
         updateData(key, newData);
+        e.target[0].value = "";
       }
     });
   };
+  function containsOnlyNumbers(str) {
+    const regex = /^[0-9]+$/;
+
+    return regex.test(str);
+  }
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLoggedIn) {
@@ -47,7 +89,7 @@ const Market = () => {
         <>
           {isLoggedIn ? (
             <form className="col chi" onSubmit={updateMarketPrice}>
-              <input type="text" placeholder="Update price" id={viewMarket} />
+              <input type="text" maxLength={3} id={viewMarket} />
               <button className="button-70" type="submit">
                 Update
               </button>

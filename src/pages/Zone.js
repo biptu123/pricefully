@@ -6,7 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 const Zone = () => {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData, search, setSearch } = firebase;
+  const {
+    data,
+    isLoggedIn,
+    updateData,
+    search,
+    setSearch,
+    setTableData,
+    tableData,
+  } = firebase;
   const [zones, setZones] = useState([]);
   const [viewZone, setViewZone] = useState(null);
   useEffect(() => {
@@ -20,6 +28,11 @@ const Zone = () => {
 
   const updateZonePrice = (e) => {
     e.preventDefault();
+    if (!containsOnlyNumbers(e.target[0].value)) {
+      window.alert("Please enter only numbers");
+      e.target[0].value = "";
+      return;
+    }
     const zone = e.target[0].id;
     const price = Number(e.target[0].value);
     const confirmation = window.confirm(
@@ -34,22 +47,50 @@ const Zone = () => {
         };
 
         updateData(key, newData);
+        e.target[0].value = "";
       }
     });
   };
+  function containsOnlyNumbers(str) {
+    const regex = /^[0-9]+$/;
+
+    return regex.test(str);
+  }
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/");
     }
   }, [firebase, navigate]);
+
+  useEffect(() => {
+    let newTableData = {};
+
+    if (viewZone) {
+      Object.keys(data).forEach((key) => {
+        if (data[key].Zone === viewZone) {
+          newTableData = {
+            ...newTableData,
+            [key]: data[key],
+          };
+        }
+      });
+    } else {
+      newTableData = data;
+    }
+
+    // Check if newTableData is different before updating
+    if (JSON.stringify(newTableData) !== JSON.stringify(tableData)) {
+      setTableData(newTableData);
+    }
+  }, [viewZone, data, tableData, setTableData]);
   return (
     <Layout>
       {viewZone ? (
         <>
           {isLoggedIn ? (
             <form className="col chi" onSubmit={updateZonePrice}>
-              <input type="text" placeholder="Update price" id={viewZone} />
+              <input type="text" maxLength={3} id={viewZone} />
               <button className="button-70" type="submit">
                 Update
               </button>

@@ -6,7 +6,7 @@ const Header = () => {
   const firebase = useFirbase();
   const navigate = useNavigate();
   return (
-    <navbar className="navbar">
+    <nav className="navbar">
       <div className="logo">
         <span className="logoname">Amrit Cement</span>
       </div>
@@ -22,7 +22,7 @@ const Header = () => {
           <i className="fa fa-search" />
         </form>
       </div>
-    </navbar>
+    </nav>
   );
 };
 

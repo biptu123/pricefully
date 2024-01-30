@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useFirbase } from "../../context/Firebase";
 
 const SideMenu = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const firebase = useFirbase();
-  const { data, isLoggedIn, logoutUser, signinWithGoogle } = firebase;
+  const { tableData, isLoggedIn, logoutUser, signinWithGoogle } = firebase;
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+
+  useEffect(() => {}, []);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -70,11 +72,11 @@ const SideMenu = () => {
               </tr>
             </thead>
             <tbody>
-              {data &&
-                Object.keys(data).map((key) => (
+              {tableData &&
+                Object.keys(tableData).map((key) => (
                   <tr key={key}>
-                    <td>{data[key]["Dealer Name"]}</td>
-                    <td>{data[key]["price"]}</td>
+                    <td>{tableData[key]["Dealer Name"]}</td>
+                    <td>{tableData[key]["price"]}</td>
                   </tr>
                 ))}
             </tbody>
