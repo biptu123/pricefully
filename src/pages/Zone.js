@@ -136,6 +136,7 @@ const Zone = () => {
                       <div className="total-invoice">
                         <h3 className="cardtittle">{zone}</h3>
                         <button
+                          style={{ width: "70px" }}
                           className="button-70"
                           role="button"
                           onClick={() => {

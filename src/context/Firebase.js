@@ -78,7 +78,10 @@ export const FirebaseProvider = (props) => {
 
   const updateData = (key, newData) => {
     const dataRef = ref(database, `test/${key}`);
-    const priceRef = ref(database, `modules/module${key}`);
+    const priceRef = ref(
+      database,
+      `modules/module${data[key]["Customer Code"]}`
+    );
 
     try {
       let price = parseInt(newData.price);

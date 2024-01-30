@@ -9,10 +9,11 @@ const Test = () => {
 
     info?.data.map((data) => {
       let newData = {
-        ...data,
-        price: 0,
+        integer1: 0,
+        integer2: 0,
+        integer3: 0,
       };
-      firebase.putData(`test/${data.id}`, newData);
+      firebase.putData(`modules/module${data["Customer Code"]}`, newData);
     });
   };
   return (

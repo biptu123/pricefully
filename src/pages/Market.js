@@ -135,6 +135,7 @@ const Market = () => {
                     <div className="total-invoice">
                       <h3 className="cardtittle">{market}</h3>
                       <button
+                        style={{ width: "70px" }}
                         className="button-70"
                         role="button"
                         onClick={() => {
