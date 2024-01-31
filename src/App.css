@@ -297,6 +297,10 @@ body::after {
   .searchbox input:focus {
     padding: 8px 50px 8px 20px;
   }
+
+  .cards::-webkit-scrollbar {
+    width: 10px !important;
+  }
 }
 /* ------------------------------------- */
 .main-body {
