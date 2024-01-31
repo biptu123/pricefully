@@ -7,7 +7,7 @@ const Test = () => {
   const putNewData = () => {
     // console.log(info.data);
 
-    info?.data.map((data) => {
+    info?.data.forEach((data) => {
       let newData = {
         integer1: 0,
         integer2: 0,

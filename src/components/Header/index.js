@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useFirbase } from "../../context/Firebase";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const firebase = useFirbase();
   const navigate = useNavigate();
   return (
     <nav className="navbar">
-      <div className="logo">
-        <span className="logoname">Amrit Cement</span>
+      <div className="">
+        <div className="nav-logo">
+          <img className="logoname" src={logo} alt="" />
+        </div>
       </div>
 
       <div className="searchbox">

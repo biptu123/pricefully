@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
-import { Button, Card } from "react-bootstrap";
 import Layout from "../components/Layout";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +38,7 @@ const Zone = () => {
       `Price will be updated for the zone ${zone} to ${price}`
     );
     if (!confirmation) return;
-    Object.keys(data).map((key) => {
+    Object.keys(data).forEach((key) => {
       if (data[key].Zone === zone) {
         let newData = {
           ...data[key],
@@ -61,7 +60,7 @@ const Zone = () => {
     if (!isLoggedIn) {
       navigate("/");
     }
-  }, [firebase, navigate]);
+  }, [firebase, navigate, isLoggedIn]);
 
   useEffect(() => {
     let newTableData = {};
@@ -79,7 +78,6 @@ const Zone = () => {
       newTableData = data;
     }
 
-    // Check if newTableData is different before updating
     if (JSON.stringify(newTableData) !== JSON.stringify(tableData)) {
       setTableData(newTableData);
     }
@@ -115,8 +113,8 @@ const Zone = () => {
                   <div className="col" key={key}>
                     <div className="total-invoice">
                       <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
-                      <h5 className="cardtittle">{data[key]["GST No"]}</h5>
-                      <h5 className="cardtittle">{data[key]["Zone"]}</h5>
+                      <h5 className="cardtext">{data[key]["GST No"]}</h5>
+                      <h5 className="cardtext">{data[key]["Zone"]}</h5>
 
                       <div className="price">₹{data[key]["price"]}</div>
                     </div>
@@ -134,18 +132,31 @@ const Zone = () => {
                   zone.toUpperCase().includes(search.toUpperCase()) && (
                     <div className="col" key={zone}>
                       <div className="total-invoice">
-                        <h3 className="cardtittle">{zone}</h3>
-                        <button
-                          style={{ width: "70px" }}
-                          className="button-70"
-                          role="button"
-                          onClick={() => {
-                            setSearch("");
-                            setViewZone(zone);
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            padding: "0.5em",
+                            justifyContent: "center",
+                            alignItems: "center",
                           }}
                         >
-                          View
-                        </button>
+                          <h3
+                            className="cardtittle"
+                            style={{ fontSize: "15px" }}
+                          >
+                            {zone}
+                          </h3>
+                          <button
+                            className="button-70"
+                            onClick={() => {
+                              setSearch("");
+                              setViewZone(zone);
+                            }}
+                          >
+                            View
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )

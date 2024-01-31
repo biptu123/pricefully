@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 function All() {
   const firebase = useFirbase();
-  const { data, isLoggedIn, updateData, search } = firebase;
+  const { data, isLoggedIn, updateData, search, tableData, setTableData } =
+    firebase;
 
   const updatePrice = (e) => {
     e.preventDefault();
@@ -40,6 +41,11 @@ function All() {
       navigate("/");
     }
   }, [firebase, navigate]);
+  useEffect(() => {
+    if (JSON.stringify(data) !== JSON.stringify(tableData)) {
+      setTableData(data);
+    }
+  }, [data, tableData, setTableData]);
 
   return (
     <Layout>
@@ -53,8 +59,8 @@ function All() {
                 <div className="col" key={key}>
                   <div className="total-invoice">
                     <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
-                    <h5 className="cardtittle">{data[key]["GST No"]}</h5>
-                    <h5 className="cardtittle">{data[key]["Zone"]}</h5>
+                    <h5 className="cardtext">{data[key]["GST No"]}</h5>
+                    <h5 className="cardtext">{data[key]["Zone"]}</h5>
 
                     <div className="price">₹{data[key]["price"]}</div>
                     {isLoggedIn ? (

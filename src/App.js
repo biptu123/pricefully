@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import All from "./pages/All";
 import Zone from "./pages/Zone";
 import Market from "./pages/Market";
-import Test from "./pages/Test";
+// import Test from "./pages/Test";
 
 function App() {
   return (

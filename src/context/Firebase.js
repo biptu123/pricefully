@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import { getDatabase, set, ref, get, child, onValue } from "firebase/database";
+import { getDatabase, set, ref, onValue } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXwvfqM--Mo5dxdzW9qG9QrU_NTkkx1ec",
@@ -20,7 +20,7 @@ const firebaseConfig = {
   messagingSenderId: "22792679680",
   appId: "1:22792679680:web:01553bb0f1114acf7103e5",
   measurementId: "G-J97YTG4YV2",
-  databaseURL: "https://set-cement-price-default-rtdb.firebaseio.com/",
+  // databaseURL: "https://set-cement-price-default-rtdb.firebaseio.com/",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

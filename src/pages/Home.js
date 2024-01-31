@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
 import { useFirbase } from "../context/Firebase";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +11,7 @@ const Home = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
+    console.log("Hello");
     e.preventDefault();
     setIsSubmitting(true);
     try {
@@ -28,39 +29,34 @@ const Home = () => {
     }
   }, [firebase, navigate]);
   return (
-    <div className="container">
-      <div className="row row-2">
-        <div className="col">
-          <div
-            className="total-invoice"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
-            }}
-          >
-            <form onSubmit={handleSubmit}>
+    <>
+      <div className="main-logo">
+        <img src={logo} alt="" />
+      </div>
+      <div className="container">
+        <div className="login-box">
+          <h2>Admin</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="user-box">
               <input
-                className="chi"
                 type="password"
-                placeholder="Enter your password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button
-                className="button-70"
-                type="submit"
-                disabled={isSubmitting}
-              >
-                Login to your account
-              </button>
-            </form>
-          </div>
+              <label>Password</label>
+            </div>
+            <a onClick={handleSubmit}>
+              <span />
+              <span />
+              <span />
+              <span />
+              Submit
+            </a>
+          </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

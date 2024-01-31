@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useFirbase } from "../../context/Firebase";
+import "./style.css";
 
 const SideMenu = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const firebase = useFirbase();
   const { tableData, isLoggedIn, logoutUser, signinWithGoogle } = firebase;
 
@@ -46,32 +47,24 @@ const SideMenu = () => {
           <i className="fa fa-credit-card-alt" />
           <a>All</a>
         </li>
-        {isLoggedIn ? (
+        {isLoggedIn && (
           <li onClick={logoutUser}>
             <i className="fa fa-credit-card-alt" />
             <a>Logout</a>
           </li>
-        ) : (
-          <li onClick={signinWithGoogle}>
-            <i className="fa fa-credit-card-alt" />
-            <a>Login with google</a>
-          </li>
         )}
+        <li onClick={toggleSidebar} className="toogle-btn">
+          <i className="fa fa-credit-card-alt" />
+          <a>{isSidebarOpen ? "Close" : "Show"}</a>
+        </li>
       </ul>
-      <div className="grid">
-        <div className="grid-container">
-          <table>
-            <thead>
-              <tr className="header">
-                <th>
-                  Dealer Name<div>Dealer Name</div>
-                </th>
-                <th>
-                  Price<div>Price</div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+      <div className={`responsive-wrapper ${isSidebarOpen && "open"}`}>
+        <div className="table-title">
+          <span>Dealer Name</span> <span>Price</span>
+        </div>
+        <div className="table-wrapper">
+          <table className="table">
+            <tbody className="table-body">
               {tableData &&
                 Object.keys(tableData).map((key) => (
                   <tr key={key}>
