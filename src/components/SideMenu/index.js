@@ -16,6 +16,12 @@ const SideMenu = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const result = window.confirm("Are you sure you want to log out");
+    if (!result) return;
+    logoutUser();
+  };
   return (
     <div className="sidebar">
       <ul>
@@ -48,7 +54,7 @@ const SideMenu = () => {
           <a>All</a>
         </li>
         {isLoggedIn && (
-          <li onClick={logoutUser}>
+          <li onClick={handleLogout}>
             <i className="fa fa-credit-card-alt" />
             <a>Logout</a>
           </li>

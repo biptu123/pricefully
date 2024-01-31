@@ -301,6 +301,32 @@ body::after {
   .cards::-webkit-scrollbar {
     width: 10px !important;
   }
+  .container-body .sidebar ul li:hover {
+    background: none;
+    color: #000000;
+  }
+  .container-body .sidebar ul li:hover a {
+    color: #000000;
+  }
+
+  .container-body .sidebar ul .dashboard {
+    background: none;
+    border-radius: 8px;
+    position: relative;
+  }
+  .container-body .sidebar ul .dashboard::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #00004d;
+  }
+
+  .container-body .sidebar ul .dashboard a {
+    color: #000000;
+  }
 }
 /* ------------------------------------- */
 .main-body {
