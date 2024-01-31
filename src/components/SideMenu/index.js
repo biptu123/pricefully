@@ -58,7 +58,7 @@ const SideMenu = () => {
           <a>{isSidebarOpen ? "Close" : "Show"}</a>
         </li>
       </ul>
-      <div className={`responsive-wrapper ${isSidebarOpen && "open"}`}>
+      <div className={`responsive-wrapper ${isSidebarOpen ? "open" : "close"}`}>
         <div className="table-title">
           <span>Dealer Name</span> <span>Price</span>
         </div>

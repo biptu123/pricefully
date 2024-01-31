@@ -113,8 +113,11 @@ const Zone = () => {
                   <div className="col" key={key}>
                     <div className="total-invoice">
                       <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
-                      <h5 className="cardtext">{data[key]["GST No"]}</h5>
+                      <h5 className="cardtext-italic">{data[key]["GST No"]}</h5>
                       <h5 className="cardtext">{data[key]["Zone"]}</h5>
+                      <h5 className="cardtext-italic">
+                        {data[key]["Customer Code"]}
+                      </h5>
 
                       <div className="price">₹{data[key]["price"]}</div>
                     </div>
