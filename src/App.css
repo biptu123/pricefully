@@ -376,15 +376,9 @@ body::after {
 }
 
 .container-body .main-body .cards .row-1 {
-  /* display: grid;
-    grid-template-columns: 30% 40% auto;
-    grid-gap: 20px; */
 }
 
 .container-body .main-body .cards .row-2 {
-  /* display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 20px; */
   display: flex;
   gap: 10px;
   flex-wrap: wrap;

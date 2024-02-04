@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useFirbase } from "../context/Firebase";
-import { Button, Card } from "react-bootstrap";
 import Layout from "../components/Layout";
 import { useNavigate } from "react-router-dom";
+import {
+  CardWrapper,
+  DealerCard,
+  DealerCode,
+  DealerName,
+  Form,
+  GSTN,
+  Market,
+  Price,
+  PriceInfo,
+  PriceInput,
+  UpdateButton,
+  Zone,
+  DealerInfo,
+} from "./style";
 
 function All() {
   const firebase = useFirbase();
@@ -56,35 +70,33 @@ function All() {
               data[key]["Dealer Name"]
                 .toUpperCase()
                 .includes(search.toUpperCase()) && (
-                <div className="col" key={key}>
-                  <div className="total-invoice">
-                    <h3 className="cardtittle">{data[key]["Dealer Name"]}</h3>
-                    <h5 className="cardtext-italic">{data[key]["GST No"]}</h5>
-                    <h5 className="cardtext">{data[key]["Zone"]}</h5>
-                    <h5 className="cardtext-italic">
-                      {data[key]["Customer Code"]}
-                    </h5>
-
-                    <div className="price">₹{data[key]["price"]}</div>
-                    {isLoggedIn ? (
-                      <form className="chi" onSubmit={updatePrice}>
-                        <input
-                          type="text"
-                          id={key}
-                          maxLength={3}
-                          title="Price should be a three-digit number"
-                        />
-                        <button
-                          className="button-70"
-                          role="button"
-                          type="submit"
-                        >
-                          Edit
-                        </button>
-                      </form>
-                    ) : null}
-                  </div>
-                </div>
+                <CardWrapper key={key}>
+                  <DealerCard>
+                    <DealerInfo>
+                      <DealerCode>
+                        Dealer Code: {data[key]["Customer Code"]}
+                      </DealerCode>
+                      <GSTN>GSTN:{data[key]["GST No"]}</GSTN>
+                      <Zone>Zone: {data[key]["Zone"]}</Zone>
+                      <Market>Market: {data[key]["Market"]}</Market>
+                    </DealerInfo>
+                    <DealerName>{data[key]["Dealer Name"]}</DealerName>
+                    <PriceInfo>
+                      {isLoggedIn ? (
+                        <Form onSubmit={updatePrice}>
+                          <PriceInput
+                            placeholder="000"
+                            id={key}
+                            maxLength={3}
+                            title="Price should be a three-digit number"
+                          />
+                          <UpdateButton type="submit">update</UpdateButton>
+                        </Form>
+                      ) : null}
+                      <Price>₹{data[key]["price"]}</Price>
+                    </PriceInfo>
+                  </DealerCard>
+                </CardWrapper>
               )
           )}
       </div>
