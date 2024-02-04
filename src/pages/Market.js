@@ -155,7 +155,7 @@ const Market = () => {
                         <DealerCode>
                           Dealer Code: {data[key]["Customer Code"]}
                         </DealerCode>
-                        <GSTN>GSTN:{data[key]["GST No"]}</GSTN>
+                        <GSTN>GSTIN:{data[key]["GST No"]}</GSTN>
                         <Zone>Zone: {data[key]["Zone"]}</Zone>
                         <MarketName>Market: {data[key]["Market"]}</MarketName>
                       </DealerInfo>
