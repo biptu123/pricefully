@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`${FontFace}`;
 
 export const CardWrapper = styled.div`
   width: 18rem;
+  min-height: 20rem;
   overflow: hidden;
   border-radius: 15px;
   display: flex;
@@ -63,7 +64,7 @@ export const Zone = styled.p`
   color: #288bb1;
 `;
 
-export const Market = styled.p`
+export const MarketName = styled.p`
   width: 100%;
   font-weight: 600;
   font-size: 1.5rem;
@@ -156,4 +157,32 @@ export const Price = styled.p`
   font-weight: 700;
   color: #dc1847;
   font-family: "digital", sans-serif;
+`;
+
+export const ViewButton = styled.button`
+  border: none;
+  background-color: #dc1847;
+  box-shadow: 0 -13px #ed9cbb;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-right: auto;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: monospace;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 -5px #ed9cbb;
+    transition: box-shadow 0.5s ease-in-out;
+  }
+`;
+
+export const ViewCard = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #f5dfe8;
 `;

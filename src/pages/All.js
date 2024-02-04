@@ -9,7 +9,7 @@ import {
   DealerName,
   Form,
   GSTN,
-  Market,
+  MarketName,
   Price,
   PriceInfo,
   PriceInput,
@@ -78,7 +78,7 @@ function All() {
                       </DealerCode>
                       <GSTN>GSTN:{data[key]["GST No"]}</GSTN>
                       <Zone>Zone: {data[key]["Zone"]}</Zone>
-                      <Market>Market: {data[key]["Market"]}</Market>
+                      <MarketName>Market: {data[key]["Market"]}</MarketName>
                     </DealerInfo>
                     <DealerName>{data[key]["Dealer Name"]}</DealerName>
                     <PriceInfo>
