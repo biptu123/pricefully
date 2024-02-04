@@ -119,14 +119,15 @@ export const PriceInput = styled.input`
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border: none;
   background: none;
-  width: 50%;
+  width: 100%;
   height: 50%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   color: #ffffff;
-  letter-spacing: 1.5px;
+  letter-spacing: 5px;
   font-weight: 700;
+  padding-left: 4px;
 
   &::placeholder {
     color: #ffffff;
