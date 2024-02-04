@@ -261,6 +261,83 @@ body::after {
   padding: 0 5px;
 }
 
+@media (max-width: 550px) {
+  .nav-logo img {
+    margin: 0;
+    width: 100px !important;
+    text-shadow: 10px 10px 10px black;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    margin: 0;
+  }
+  .container-body .sidebar {
+    width: 70px;
+    padding: 5px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container-body .sidebar ul li {
+    margin: 15px 0;
+    padding: 5px 0;
+  }
+  .container-body .sidebar ul li a {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container-body .sidebar ul .dashboard {
+    background: #00004d;
+    color: #fff;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 5px 0;
+  }
+
+  .searchbox input {
+    padding: 8px 0 8px 8px;
+  }
+
+  .searchbox input:focus {
+    padding: 8px 0 8px 8px;
+  }
+
+  .cards::-webkit-scrollbar {
+    width: 10px !important;
+  }
+  .container-body .sidebar ul li:hover {
+    background: none;
+    color: #000000;
+  }
+  .container-body .sidebar ul li:hover a {
+    color: #000000;
+  }
+
+  .container-body .sidebar ul .dashboard {
+    background: none;
+    border-radius: 8px;
+    position: relative;
+  }
+  .container-body .sidebar ul .dashboard::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #00004d;
+  }
+
+  .container-body .sidebar ul .dashboard a {
+    color: #000000;
+  }
+}
+
 @media (min-width: 435px) and (max-width: 550px) {
   body {
     overflow-x: hidden;

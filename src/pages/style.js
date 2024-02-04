@@ -24,6 +24,9 @@ export const CardWrapper = styled.div`
   @media (min-width: 200px) and (max-width: 550px) {
     transform: scale(0.7);
   }
+  @media (max-width: 550px) {
+    margin-left: -2.5rem;
+  }
 `;
 export const DealerCard = styled.div`
   height: 100%;
