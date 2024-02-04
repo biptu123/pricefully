@@ -23,7 +23,6 @@ export const CardWrapper = styled.div`
   border-bottom: 0.1em solid #444444;
   @media (min-width: 200px) and (max-width: 550px) {
     transform: scale(0.7);
-    margin-left: -3rem;
   }
 `;
 export const DealerCard = styled.div`

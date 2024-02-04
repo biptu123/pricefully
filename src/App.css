@@ -261,16 +261,19 @@ body::after {
   padding: 0 5px;
 }
 
-@media (min-width: 200px) and (max-width: 550px) {
+@media (min-width: 435px) and (max-width: 550px) {
   body {
     overflow-x: hidden;
   }
+
   .sidebar {
     margin: 0;
   }
   .container-body .sidebar {
     width: 70px;
     padding: 5px;
+    margin-left: 0;
+    margin-right: 0;
   }
   .container-body .sidebar ul li {
     margin: 15px 0;
