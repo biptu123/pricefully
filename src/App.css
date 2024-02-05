@@ -26,55 +26,6 @@ body {
   /* border: 1px solid black; */
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  left: 8%;
-  bottom: 2%;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(
-    to top right,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.5)
-  );
-  animation: zigzag2 3s linear infinite;
-}
-
-@keyframes zigzag2 {
-  0%,
-  100% {
-    transform: translateX(50px);
-  }
-
-  50% {
-    transform: translateX(100px) scale(0.8);
-  }
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  left: 92%;
-  top: 12%;
-  z-index: -1;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.5);
-  animation: zigzag 3s linear infinite;
-}
-
-@keyframes zigzag {
-  0%,
-  100% {
-    transform: translateY(50px);
-  }
-
-  50% {
-    transform: translateY(100px) scale(0.8);
-  }
-}
-
 .container {
   width: 95vw;
   height: 100vh;
