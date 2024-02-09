@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import { getDatabase, set, ref, onValue } from "firebase/database";
+import { getDatabase, set, ref, onValue, push } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXwvfqM--Mo5dxdzW9qG9QrU_NTkkx1ec",
@@ -37,6 +37,7 @@ export const FirebaseProvider = (props) => {
   const [data, setData] = useState(null);
   const [search, setSearch] = useState("");
   const [tableData, setTableData] = useState(null);
+  const [priceHistory, setPriceHistory] = useState(null);
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) setUser(user);
@@ -46,9 +47,9 @@ export const FirebaseProvider = (props) => {
       setData(snapshot.val());
       setTableData(snapshot.val());
     });
-    // onValue(ref(database, "modules"), (snapshot) => {
-    //   setModules(snapshot.val());
-    // });
+    onValue(ref(database, "price_history"), (snapshot) => {
+      setPriceHistory(snapshot.val());
+    });
   }, []);
   const signupUser = (email, password) =>
     createUserWithEmailAndPassword(firebaseAuth, email, password);
@@ -76,23 +77,64 @@ export const FirebaseProvider = (props) => {
 
   const putData = (key, data) => set(ref(database, key), data);
 
-  const updateData = (key, newData) => {
+  // const updateData = (key, newData) => {
+  //   const dataRef = ref(database, `test/${key}`);
+  //   const priceRef = ref(
+  //     database,
+  //     `modules/module${data[key]["Customer Code"]}`
+  //   );
+
+  //   try {
+  //     let price = parseInt(newData.price);
+  //     let newPrice = {};
+  //     for (let i = 3; i > 0; i--) {
+  //       let digit = price % 10;
+  //       newPrice = { ...newPrice, [`integer${i}`]: digit };
+  //       price = Math.floor(price / 10);
+  //     }
+  //     set(priceRef, newPrice);
+  //     set(dataRef, newData);
+  //     console.log("Data updated successfully!");
+  //   } catch (error) {
+  //     console.error("Error updating data:", error.message);
+  //   }
+  // };
+
+  const updateData = async (key, newData) => {
     const dataRef = ref(database, `test/${key}`);
-    const priceRef = ref(
-      database,
-      `modules/module${data[key]["Customer Code"]}`
-    );
+    const priceRef = ref(database, `modules/module${newData["Customer Code"]}`);
+    const priceHistoryRef = ref(database, "price_history");
 
     try {
       let price = parseInt(newData.price);
       let newPrice = {};
-      for (let i = 3; i > 0; i--) {
-        let digit = price % 10;
-        newPrice = { ...newPrice, [`integer${i}`]: digit };
+      for (let i = 1; i <= 3; i++) {
+        const digit = price % 10;
+        newPrice[`integer${i}`] = digit;
         price = Math.floor(price / 10);
       }
-      set(priceRef, newPrice);
-      set(dataRef, newData);
+      await set(priceRef, newPrice);
+      await set(dataRef, newData);
+
+      // Add record to price history
+      let avgPrice = 0;
+      let length = 0;
+
+      for (let item of data) {
+        if (item?.price) {
+          avgPrice += item.price;
+          length++;
+        }
+      }
+      avgPrice = avgPrice / length;
+      console.log(length);
+      const timestamp = new Date().toISOString();
+      const priceHistoryData = {
+        productId: key,
+        price: avgPrice,
+        timestamp,
+      };
+      await push(priceHistoryRef, priceHistoryData);
       console.log("Data updated successfully!");
     } catch (error) {
       console.error("Error updating data:", error.message);
@@ -115,6 +157,7 @@ export const FirebaseProvider = (props) => {
     setSearch,
     tableData,
     setTableData,
+    priceHistory,
   };
 
   return (
