@@ -3,14 +3,34 @@
   font-family: digital;
   src: url("./assets/fonts/digital.ttf");
 }
+@font-face {
+  font-family: 'GabrielSans Medium';
+  src: url('./assets/fonts/GabrielSans-Trial-Medium.woff')  format('woff');
+ }
+ @font-face {
+  font-family: 'GabrielSans Bold';
+  src: url('./assets/fonts/GabrielSans-Trial-Bold.woff')  format('woff');
+ }
+ 
+ @font-face {
+  font-family: 'HelveticaNowDisplay Medium';
+  src: url('./assets/fonts/HelveticaNowDisplay-MedIta.woff')  format('woff');
+ }
+ 
 * {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'GabrielSans Medium';
   font-size: 14px;
   text-decoration: none;
   list-style: none;
   user-select: none;
+}
+.rs-symbol{
+  font-family: 'HelveticaNowDisplay Medium';
+    font-size: 35px;
+    margin-right: 10px;
+    color:#dd1947;
 }
 
 body {
@@ -21,7 +41,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  min-height: 100vh;
   max-height: 100vh;
   /* border: 1px solid black; */
 }
@@ -38,9 +57,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  margin-top: 1em;
-  /* border: 1px solid black; */
 }
 
 .container .navbar .logo {
@@ -165,7 +181,8 @@ body {
 
 /* -----------------------sidebar------------------- */
 .container-body .sidebar {
-  margin: 0px 0 30px 20px;
+  max-height: 80vh;
+  margin: 0px 0 20px 20px;
   background: linear-gradient(
     to top right,
     rgba(255, 255, 255, 0.4),
@@ -176,7 +193,7 @@ body {
 }
 
 .container-body .sidebar ul li {
-  padding: 10px 10px;
+  padding: 5px 10px;
   margin: 10px 0;
 }
 
@@ -200,7 +217,6 @@ body {
   background: #00004d;
   color: #fff;
   border-radius: 8px;
-  padding: 10px;
 }
 
 .container-body .sidebar ul .dashboard a {
@@ -367,6 +383,9 @@ body {
   overflow-y: auto;
   height: 75vh;
   overflow-x: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px !important;
 }
 .cards::-webkit-scrollbar {
   width: 20px;
@@ -400,20 +419,22 @@ body {
 }
 
 .container-body .main-body .cards {
-  display: grid;
+  /* display: grid;
   grid-template-rows: 180px 140px;
   grid-gap: 20px;
-  padding: 20px;
+  padding: 20px; */
 }
 
 .container-body .main-body .cards .row-1 {
 }
 
 .container-body .main-body .cards .row-2 {
+  width: 100%;
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 .container-body .main-body .cards .row .col {
@@ -605,10 +626,18 @@ body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(161, 53, 53, 0.521);
+  background: #b2d2ff;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
+}
+
+.login-box form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .login-box h2 {
@@ -616,9 +645,11 @@ body {
   padding: 0;
   color: #ffffff;
   text-align: center;
+  font-size: 2rem;
 }
 
 .login-box .user-box {
+  width: 100%;
   position: relative;
 }
 
@@ -649,15 +680,15 @@ body {
 .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #03e9f4;
+  color: #ffffff;
   font-size: 12px;
 }
 
 .login-box form a {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   padding: 10px 20px;
-  color: #03e9f4;
+  color: #000000;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -665,6 +696,8 @@ body {
   transition: 0.5s;
   margin-top: 40px;
   letter-spacing: 4px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .login-box a:hover {
@@ -768,12 +801,21 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .chi input {
-  width: 30%;
-  height: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
 }
+
+.chi input:focus {
+  outline: none;
+}
+
 
 .grid {
   position: relative;
@@ -838,19 +880,20 @@ tr {
 .main-logo {
   position: absolute;
   width: 95%;
-  bottom: 60vh;
+  bottom: 70vh;
   display: flex;
   justify-content: center;
 }
 
 .main-logo img {
-  width: 600px;
+  width: 400px;
   max-width: 80vw;
   height: auto;
 }
 
 .nav-logo img {
   margin: 0;
-  width: 150px;
+  margin-left: 25%;
+  width: 200px;
   text-shadow: 10px 10px 10px black;
 }

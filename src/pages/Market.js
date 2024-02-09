@@ -18,6 +18,7 @@ import {
   DealerInfo,
   ViewCard,
   ViewButton,
+  ViewCardWrapper,
 } from "./style";
 import styled from "styled-components";
 
@@ -127,18 +128,18 @@ const Market = () => {
         <>
           {isLoggedIn ? (
             <form className="col chi" onSubmit={updateMarketPrice}>
-              <input type="text" maxLength={3} id={viewMarket} />
+              <input  type="text" maxLength={3} id={viewMarket} />
               <button className="button-70" type="submit">
-                Update
+                Update All
               </button>
               <button className="button-70" onClick={() => setViewMarket(null)}>
-                Goback
+                Back
               </button>
             </form>
           ) : (
             <form className="col chi">
               <button className="button-70" onClick={() => setViewMarket(null)}>
-                Goback
+                Back
               </button>
             </form>
           )}
@@ -159,7 +160,9 @@ const Market = () => {
                         <Zone>Zone: {data[key]["Zone"]}</Zone>
                         <MarketName>Market: {data[key]["Market"]}</MarketName>
                       </DealerInfo>
-                      <DealerName>{data[key]["Dealer Name"]}</DealerName>
+                      
+                    </DealerCard>
+                      <DealerName><h3>{data[key]["Dealer Name"]}</h3></DealerName>
                       <PriceInfo>
                         {isLoggedIn ? (
                           <Form onSubmit={updatePrice}>
@@ -172,9 +175,8 @@ const Market = () => {
                             <UpdateButton type="submit">update</UpdateButton>
                           </Form>
                         ) : null}
-                        <Price>₹{data[key]["price"]}</Price>
+                        <Price><span className="rs-symbol">₹</span>{data[key]["price"]}</Price>
                       </PriceInfo>
-                    </DealerCard>
                   </CardWrapper>
                 ) : null
               )}
@@ -187,9 +189,9 @@ const Market = () => {
               (market) =>
                 market &&
                 market.toUpperCase().includes(search.toUpperCase()) && (
-                  <CardWrapper key={market}>
+                  <ViewCardWrapper key={market}>
                     <ViewCard>
-                      <DealerName>{market}</DealerName>
+                      <MarketName style={{textAlign: "center"}}>{market}</MarketName>
                       <PriceInfo>
                         <ViewButton
                           type="button"
@@ -202,7 +204,7 @@ const Market = () => {
                         </ViewButton>
                       </PriceInfo>
                     </ViewCard>
-                  </CardWrapper>
+                  </ViewCardWrapper>
                 )
             )}
         </div>

@@ -80,7 +80,8 @@ function All() {
                       <Zone>Zone: {data[key]["Zone"]}</Zone>
                       <MarketName>Market: {data[key]["Market"]}</MarketName>
                     </DealerInfo>
-                    <DealerName>{data[key]["Dealer Name"]}</DealerName>
+                  </DealerCard>
+                    <DealerName><h3>{data[key]["Dealer Name"]}</h3></DealerName>
                     <PriceInfo>
                       {isLoggedIn ? (
                         <Form onSubmit={updatePrice}>
@@ -93,9 +94,8 @@ function All() {
                           <UpdateButton type="submit">update</UpdateButton>
                         </Form>
                       ) : null}
-                      <Price>₹{data[key]["price"]}</Price>
+                      <Price><span className="rs-symbol">₹</span>{data[key]["price"]}</Price>
                     </PriceInfo>
-                  </DealerCard>
                 </CardWrapper>
               )
           )}

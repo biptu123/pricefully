@@ -47,10 +47,6 @@ const Home = () => {
               <label>Password</label>
             </div>
             <a onClick={handleSubmit}>
-              <span />
-              <span />
-              <span />
-              <span />
               Submit
             </a>
           </form>

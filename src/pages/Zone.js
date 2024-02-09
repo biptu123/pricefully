@@ -18,6 +18,7 @@ import {
   DealerInfo,
   ViewCard,
   ViewButton,
+  ViewCardWrapper,
 } from "./style";
 
 const Zone = () => {
@@ -128,16 +129,16 @@ const Zone = () => {
             <form className="col chi" onSubmit={updateZonePrice}>
               <input type="text" maxLength={3} id={viewZone} />
               <button className="button-70" type="submit">
-                Update
+                Update All
               </button>
               <button className="button-70" onClick={() => setViewZone(null)}>
-                Goback
+                Back
               </button>
             </form>
           ) : (
             <form className="col chi">
               <button className="button-70" onClick={() => setViewZone(null)}>
-                Goback
+                Back
               </button>
             </form>
           )}
@@ -158,7 +159,9 @@ const Zone = () => {
                         <ZoneName>Zone: {data[key]["Zone"]}</ZoneName>
                         <MarketName>Market: {data[key]["Market"]}</MarketName>
                       </DealerInfo>
-                      <DealerName>{data[key]["Dealer Name"]}</DealerName>
+                      
+                    </DealerCard>
+                      <DealerName><h3>{data[key]["Dealer Name"]}</h3></DealerName>
                       <PriceInfo>
                         {isLoggedIn ? (
                           <Form onSubmit={updatePrice}>
@@ -171,9 +174,8 @@ const Zone = () => {
                             <UpdateButton type="submit">update</UpdateButton>
                           </Form>
                         ) : null}
-                        <Price>₹{data[key]["price"]}</Price>
+                        <Price><span className="rs-symbol">₹</span>{data[key]["price"]}</Price>
                       </PriceInfo>
-                    </DealerCard>
                   </CardWrapper>
                 ) : null
               )}
@@ -186,9 +188,9 @@ const Zone = () => {
               zones.map(
                 (zone) =>
                   zone.toUpperCase().includes(search.toUpperCase()) && (
-                    <CardWrapper key={zone}>
+                    <ViewCardWrapper key={zone}>
                       <ViewCard>
-                        <DealerName>{zone}</DealerName>
+                        <MarketName style={{textAlign: "center"}}>{zone}</MarketName>
                         <PriceInfo>
                           <ViewButton
                             type="button"
@@ -201,7 +203,7 @@ const Zone = () => {
                           </ViewButton>
                         </PriceInfo>
                       </ViewCard>
-                    </CardWrapper>
+                    </ViewCardWrapper>
                   )
               )}
           </div>

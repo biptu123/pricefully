@@ -13,14 +13,15 @@ const FontFace = css`
 const GlobalStyle = createGlobalStyle`${FontFace}`;
 
 export const CardWrapper = styled.div`
-  width: 18rem;
-  min-height: 20rem;
-  overflow: hidden;
-  border-radius: 15px;
   display: flex;
+  flex-direction: column;
+  justify-content:center ;
   align-items: center;
-  box-shadow: 0 -8px 5px #444444;
-  border-bottom: 0.1em solid #444444;
+  height: 230px;
+  width: 260px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
   @media (min-width: 200px) and (max-width: 550px) {
     transform: scale(0.7);
   }
@@ -29,108 +30,97 @@ export const CardWrapper = styled.div`
   }
 `;
 export const DealerCard = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: #f5dfe8;
+height: 45%;
+width: 100%;
 `;
+
+
+
+export const DealerInfo = styled.div`
+height: calc(100%-40px);
+margin: 20px;
+width: calc(100%-40px);
+`;
+
 
 export const DealerCode = styled.p`
   width: 100%;
-  padding-bottom: 5px;
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: #dc1847;
-  font-weight: 600;
+  color: #dd1947;
+  font-size: .9rem;
 `;
 
 export const GSTN = styled.p`
   width: 100%;
-  font-size: 1rem;
-  padding-bottom: 5px;
-  font-family: monospace;
-  font-weight: 600;
-
+  font-size: .9rem;
+  margin-top: -2px;
   color: #288bb1;
 `;
 
 export const Zone = styled.p`
   width: 100%;
-  padding-top: 5px;
-  /* padding-bottom: 2px; */
-  font-weight: 600;
-  font-family: monospace;
+  padding-top: 2px;
+  font-size: .8rem;
+
   color: #288bb1;
 `;
 
 export const MarketName = styled.p`
+margin-top: -3px;
   width: 100%;
-  font-weight: 600;
-  font-size: 1.5rem;
-  font-family: monospace;
+  font-size: 1rem;
+  font-family: "GabrielSans Bold";
   color: #288bb1;
 `;
 
-export const DealerInfo = styled.div`
-  padding-top: 20px;
-  padding-left: 20px;
-`;
 
-export const DealerName = styled.p`
-  padding-left: 20px;
-  width: 100%;
-  font-size: 1.5rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: monospace;
-  font-weight: 700;
-  background-color: #288bb1;
-  color: #ffff;
+export const DealerName = styled.div`
+height: 20%;
+width: 100%;
+background: #298bb0;
+display: flex;
+align-items: center;
+
+& > h3{
+    margin-left: 20px;
+    width: calc(100% - 40px);
+    color: #fff;
+    line-height: 1.2rem;
+    font-family: "GabrielSans Bold";
+}
 `;
 
 export const PriceInfo = styled.div`
-  padding-left: 20px;
-
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  background-color: #f5e0e8;
-  /* height: 30%; */
-  padding-top: 20px;
-  padding-bottom: 20px;
+height: 35%;
+width: 100%;
+display: flex;
 `;
 
 export const Form = styled.form`
-  width: 27%;
-  aspect-ratio: 3/2;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  background-color: #ed9cbb;
-  height: fit-content;
-  overflow: hidden;
+width: 30%;
+height: 55%;
+background: #ed9cbb;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+border-radius: 5px;
+margin-left: 20px;
+margin-bottom: 20px;
+margin-top: auto;
 `;
 
 export const PriceInput = styled.input`
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+font-family: "GabrielSans Bold";
+  width: 100%;
   border: none;
   background: none;
-  width: 100%;
   height: 50%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: #ffffff;
-  letter-spacing: 5px;
-  font-weight: 700;
-  padding-left: 4px;
-
+  color: #fff;
   &::placeholder {
-    color: #ffffff;
+    color: #f4c2d4;
+    letter-spacing: 2px;
+    font-size: .7rem;
   }
 
   &:focus {
@@ -139,46 +129,38 @@ export const PriceInput = styled.input`
 `;
 
 export const UpdateButton = styled.button`
-  border: none;
-  background-color: #dc1847;
-  padding: 0;
-  border-radius: 5px;
-  width: 100%;
-  margin: 0;
-  height: 50% !important;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 700;
-  font-family: monospace;
+width: 100%;
+height: 50%;
+background-color: #dd1947;
+border: none;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+font-family: "GabrielSans Bold";
+font-size: .7rem;
 `;
 
-export const Price = styled.p`
-  width: 60%;
-  height: fit-content;
-  padding-left: 20px;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #dc1847;
-  font-family: "digital", sans-serif;
+export const Price = styled.div`
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color:#dd1947;
+    
+  font-family: "GabrielSans Bold";
 `;
 
 export const ViewButton = styled.button`
   border: none;
   background-color: #dc1847;
-  box-shadow: 0 -13px #ed9cbb;
-  padding: 5px 20px;
+  padding: 0 20px;
   border-radius: 5px;
+  margin-left: auto;
   margin-right: auto;
   color: #fff;
   cursor: pointer;
-  font-weight: 700;
-  font-family: monospace;
-  transition: box-shadow 0.2s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 -5px #ed9cbb;
-    transition: box-shadow 0.5s ease-in-out;
-  }
 `;
 
 export const ViewCard = styled.div`
@@ -186,6 +168,25 @@ export const ViewCard = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #f5dfe8;
-`;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+`
+
+export const ViewCardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+  padding: 0 20px;
+  height: 100px;
+  width: 200px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  @media (min-width: 200px) and (max-width: 550px) {
+    transform: scale(0.7);
+  }
+  @media (max-width: 550px) {
+    margin-left: -2.5rem;
+  }`;
