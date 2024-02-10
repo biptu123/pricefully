@@ -32,6 +32,8 @@ const Market = () => {
     setSearch,
     setTableData,
     tableData,
+    addPriceHistory,
+    currentAvg,
   } = firebase;
   const [markets, setMarkets] = useState([]);
   const [viewMarket, setViewMarket] = useState(null);
@@ -73,6 +75,8 @@ const Market = () => {
       e.target[0].value = "";
       return;
     }
+
+    const updatedData = data;
     const market = e.target[0].id;
     const price = Number(e.target[0].value);
     const confirmation = window.confirm(
@@ -85,10 +89,17 @@ const Market = () => {
           ...data[key],
           price,
         };
+        updatedData[key] = newData;
 
         updateData(key, newData);
         e.target[0].value = "";
       }
+    });
+
+    addPriceHistory(updatedData, {
+      target: "market",
+      targetName: market,
+      updatedTo: price,
     });
   };
   const updatePrice = (e) => {
@@ -98,17 +109,24 @@ const Market = () => {
       e.target[0].value = "";
       return;
     }
+    const updatedData = data;
     const key = e.target[0].id;
     const price = Number(e.target[0].value);
     const newData = {
       ...data[key],
       price,
     };
+    updatedData[key] = newData;
 
     const confirmation = window.confirm(`Price will be updated to ${price}`);
     if (!confirmation) return;
     updateData(key, newData);
     e.target[0].value = "";
+    addPriceHistory(currentAvg, {
+      target: "dealer",
+      targetName: newData["Dealer Name"],
+      updatedTo: newData.price,
+    });
   };
 
   function containsOnlyNumbers(str) {
@@ -128,7 +146,7 @@ const Market = () => {
         <>
           {isLoggedIn ? (
             <form className="col chi" onSubmit={updateMarketPrice}>
-              <input  type="text" maxLength={3} id={viewMarket} />
+              <input type="text" maxLength={3} id={viewMarket} />
               <button className="button-70" type="submit">
                 Update All
               </button>
@@ -160,23 +178,27 @@ const Market = () => {
                         <Zone>Zone: {data[key]["Zone"]}</Zone>
                         <MarketName>Market: {data[key]["Market"]}</MarketName>
                       </DealerInfo>
-                      
                     </DealerCard>
-                      <DealerName><h3>{data[key]["Dealer Name"]}</h3></DealerName>
-                      <PriceInfo>
-                        {isLoggedIn ? (
-                          <Form onSubmit={updatePrice}>
-                            <PriceInput
-                              placeholder="000"
-                              id={key}
-                              maxLength={3}
-                              title="Price should be a three-digit number"
-                            />
-                            <UpdateButton type="submit">update</UpdateButton>
-                          </Form>
-                        ) : null}
-                        <Price><span className="rs-symbol">₹</span>{data[key]["price"]}</Price>
-                      </PriceInfo>
+                    <DealerName>
+                      <h3>{data[key]["Dealer Name"]}</h3>
+                    </DealerName>
+                    <PriceInfo>
+                      {isLoggedIn ? (
+                        <Form onSubmit={updatePrice}>
+                          <PriceInput
+                            placeholder="000"
+                            id={key}
+                            maxLength={3}
+                            title="Price should be a three-digit number"
+                          />
+                          <UpdateButton type="submit">update</UpdateButton>
+                        </Form>
+                      ) : null}
+                      <Price>
+                        <span className="rs-symbol">₹</span>
+                        {data[key]["price"]}
+                      </Price>
+                    </PriceInfo>
                   </CardWrapper>
                 ) : null
               )}
@@ -191,7 +213,9 @@ const Market = () => {
                 market.toUpperCase().includes(search.toUpperCase()) && (
                   <ViewCardWrapper key={market}>
                     <ViewCard>
-                      <MarketName style={{textAlign: "center"}}>{market}</MarketName>
+                      <MarketName style={{ textAlign: "center" }}>
+                        {market}
+                      </MarketName>
                       <PriceInfo>
                         <ViewButton
                           type="button"

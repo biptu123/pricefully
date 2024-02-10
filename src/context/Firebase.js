@@ -38,19 +38,53 @@ export const FirebaseProvider = (props) => {
   const [search, setSearch] = useState("");
   const [tableData, setTableData] = useState(null);
   const [priceHistory, setPriceHistory] = useState(null);
+  const [currentAvg, setCurrentAvg] = useState(null);
+
   useEffect(() => {
-    onAuthStateChanged(firebaseAuth, (user) => {
+    const testRef = ref(database, "test");
+    const priceHistoryRef = ref(database, "price_history");
+
+    // Fetch user authentication state
+    const unsubscribeAuth = onAuthStateChanged(firebaseAuth, (user) => {
       if (user) setUser(user);
       else setUser(null);
     });
-    onValue(ref(database, "test"), (snapshot) => {
-      setData(snapshot.val());
-      setTableData(snapshot.val());
+
+    // Fetch test data and calculate average price
+    const unsubscribeTest = onValue(testRef, (snapshot) => {
+      const data = snapshot.val();
+      setData(data);
+      setTableData(data);
     });
-    onValue(ref(database, "price_history"), (snapshot) => {
+
+    // Fetch price history data
+    const unsubscribePriceHistory = onValue(priceHistoryRef, (snapshot) => {
       setPriceHistory(snapshot.val());
     });
-  }, []);
+
+    // Cleanup functions to remove event listeners
+    return () => {
+      unsubscribeAuth();
+      unsubscribeTest();
+      unsubscribePriceHistory();
+    };
+  }, [database, firebaseAuth]);
+
+  useEffect(() => {
+    if (data) {
+      let total = 0;
+      let count = 0;
+      Object.values(data).forEach((item) => {
+        if (item?.price) {
+          total += item.price;
+        }
+        count++;
+      });
+      const avgPrice = count > 0 ? total / count : 0;
+      setCurrentAvg(avgPrice.toFixed(2));
+    }
+  }, [data]);
+
   const signupUser = (email, password) =>
     createUserWithEmailAndPassword(firebaseAuth, email, password);
 
@@ -77,33 +111,9 @@ export const FirebaseProvider = (props) => {
 
   const putData = (key, data) => set(ref(database, key), data);
 
-  // const updateData = (key, newData) => {
-  //   const dataRef = ref(database, `test/${key}`);
-  //   const priceRef = ref(
-  //     database,
-  //     `modules/module${data[key]["Customer Code"]}`
-  //   );
-
-  //   try {
-  //     let price = parseInt(newData.price);
-  //     let newPrice = {};
-  //     for (let i = 3; i > 0; i--) {
-  //       let digit = price % 10;
-  //       newPrice = { ...newPrice, [`integer${i}`]: digit };
-  //       price = Math.floor(price / 10);
-  //     }
-  //     set(priceRef, newPrice);
-  //     set(dataRef, newData);
-  //     console.log("Data updated successfully!");
-  //   } catch (error) {
-  //     console.error("Error updating data:", error.message);
-  //   }
-  // };
-
   const updateData = async (key, newData) => {
     const dataRef = ref(database, `test/${key}`);
     const priceRef = ref(database, `modules/module${newData["Customer Code"]}`);
-    const priceHistoryRef = ref(database, "price_history");
 
     try {
       let price = parseInt(newData.price);
@@ -116,28 +126,37 @@ export const FirebaseProvider = (props) => {
       await set(priceRef, newPrice);
       await set(dataRef, newData);
 
-      // Add record to price history
-      let avgPrice = 0;
-      let length = 0;
-
-      for (let item of data) {
-        if (item?.price) {
-          avgPrice += item.price;
-          length++;
-        }
-      }
-      avgPrice = avgPrice / length;
-      console.log(length);
-      const timestamp = new Date().toISOString();
-      const priceHistoryData = {
-        productId: key,
-        price: avgPrice,
-        timestamp,
-      };
-      await push(priceHistoryRef, priceHistoryData);
       console.log("Data updated successfully!");
     } catch (error) {
       console.error("Error updating data:", error.message);
+    }
+  };
+
+  const addPriceHistory = async (data, info) => {
+    try {
+      const priceHistoryRef = ref(database, "price_history");
+      const timestamp = new Date().toISOString();
+      let avgPrice = null;
+      if (data) {
+        let total = 0;
+        let count = 0;
+        Object.values(data).forEach((item) => {
+          if (item?.price) {
+            total += item.price;
+          }
+          count++;
+        });
+        avgPrice = count > 0 ? total / count : 0;
+      }
+      const priceHistoryData = {
+        info,
+        price: avgPrice.toFixed(2),
+        timestamp,
+      };
+      await push(priceHistoryRef, priceHistoryData);
+      console.log("Price history added successfully!");
+    } catch (error) {
+      console.error("Error adding price history:", error.message);
     }
   };
 
@@ -158,6 +177,8 @@ export const FirebaseProvider = (props) => {
     tableData,
     setTableData,
     priceHistory,
+    addPriceHistory,
+    currentAvg,
   };
 
   return (

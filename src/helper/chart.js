@@ -203,7 +203,7 @@ export const groupBySixMonthsAndCalculateAverage = (data) => {
 };
 
 export const getGroupByIntervel = (data, type) => {
-  console.log(data, type);
+  // console.log(data, type);
   switch (type) {
     case "year":
       return groupByYearAndCalculateAverage(data);

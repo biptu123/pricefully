@@ -23,25 +23,14 @@ const Dashboard = () => {
   const [intervalType, setIntervalType] = useState("");
   const [avgPrice, setAvgPrice] = useState(0);
   const navigate = useNavigate();
-  const { priceHistory, data } = firebase;
+  const { priceHistory, data, tableData, setTableData, currentAvg } = firebase;
 
   useEffect(() => {
     if (!firebase.isLoggedIn) {
       navigate("/");
     }
     if (data) {
-      let avgPrice = 0;
-      let length = 0;
-      Object.values(data).forEach((item) => {
-        if (item?.price) {
-          avgPrice += item.price;
-          length++;
-        }
-      });
-      avgPrice = avgPrice / length;
-      console.log("avg", avgPrice);
-
-      setAvgPrice(avgPrice);
+      if (currentAvg) setAvgPrice(currentAvg);
       if (priceHistory) {
         const historyArray = Object.values(priceHistory).map((item) => item);
         const processedData = getGroupByIntervel(historyArray, intervalType);
@@ -57,6 +46,12 @@ const Dashboard = () => {
       setPlotData(processedData);
     }
   }, [intervalType]);
+
+  useEffect(() => {
+    if (JSON.stringify(data) !== JSON.stringify(tableData)) {
+      setTableData(data);
+    }
+  }, [data, tableData, setTableData]);
 
   return (
     <Layout>
@@ -84,14 +79,14 @@ const Dashboard = () => {
       {
         <ResponsiveContainer width="90%" height={350}>
           <LineChart data={plotData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="label" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#6963dd" />
+            <XAxis dataKey="label" stroke="#0b570b" />
+            <YAxis stroke="#cc415f" />
             <Tooltip />
             <Line
               type="monotone"
               dataKey="price"
-              stroke="#8884d8"
+              stroke="#000000"
               activeDot={{ r: 8 }}
             />
           </LineChart>

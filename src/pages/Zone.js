@@ -31,6 +31,8 @@ const Zone = () => {
     setSearch,
     setTableData,
     tableData,
+    addPriceHistory,
+    currentAvg,
   } = firebase;
   const [zones, setZones] = useState([]);
   const [viewZone, setViewZone] = useState(null);
@@ -52,6 +54,7 @@ const Zone = () => {
     }
     const zone = e.target[0].id;
     const price = Number(e.target[0].value);
+    const updatedData = data;
     const confirmation = window.confirm(
       `Price will be updated for the zone ${zone} to ${price}`
     );
@@ -63,9 +66,16 @@ const Zone = () => {
           price,
         };
 
+        updatedData[key] = newData;
+
         updateData(key, newData);
         e.target[0].value = "";
       }
+    });
+    addPriceHistory(updatedData, {
+      target: "zone",
+      targetName: zone,
+      updatedTo: price,
     });
   };
 
@@ -76,6 +86,8 @@ const Zone = () => {
       e.target[0].value = "";
       return;
     }
+
+    const updatedData = data;
     const key = e.target[0].id;
     const price = Number(e.target[0].value);
     const newData = {
@@ -83,10 +95,17 @@ const Zone = () => {
       price,
     };
 
+    updatedData[key] = newData;
+
     const confirmation = window.confirm(`Price will be updated to ${price}`);
     if (!confirmation) return;
     updateData(key, newData);
     e.target[0].value = "";
+    addPriceHistory(updatedData, {
+      target: "dealer",
+      targetName: newData["Dealer Name"],
+      updatedTo: price,
+    });
   };
 
   function containsOnlyNumbers(str) {
@@ -159,23 +178,27 @@ const Zone = () => {
                         <ZoneName>Zone: {data[key]["Zone"]}</ZoneName>
                         <MarketName>Market: {data[key]["Market"]}</MarketName>
                       </DealerInfo>
-                      
                     </DealerCard>
-                      <DealerName><h3>{data[key]["Dealer Name"]}</h3></DealerName>
-                      <PriceInfo>
-                        {isLoggedIn ? (
-                          <Form onSubmit={updatePrice}>
-                            <PriceInput
-                              placeholder="000"
-                              id={key}
-                              maxLength={3}
-                              title="Price should be a three-digit number"
-                            />
-                            <UpdateButton type="submit">update</UpdateButton>
-                          </Form>
-                        ) : null}
-                        <Price><span className="rs-symbol">₹</span>{data[key]["price"]}</Price>
-                      </PriceInfo>
+                    <DealerName>
+                      <h3>{data[key]["Dealer Name"]}</h3>
+                    </DealerName>
+                    <PriceInfo>
+                      {isLoggedIn ? (
+                        <Form onSubmit={updatePrice}>
+                          <PriceInput
+                            placeholder="000"
+                            id={key}
+                            maxLength={3}
+                            title="Price should be a three-digit number"
+                          />
+                          <UpdateButton type="submit">update</UpdateButton>
+                        </Form>
+                      ) : null}
+                      <Price>
+                        <span className="rs-symbol">₹</span>
+                        {data[key]["price"]}
+                      </Price>
+                    </PriceInfo>
                   </CardWrapper>
                 ) : null
               )}
@@ -190,7 +213,9 @@ const Zone = () => {
                   zone.toUpperCase().includes(search.toUpperCase()) && (
                     <ViewCardWrapper key={zone}>
                       <ViewCard>
-                        <MarketName style={{textAlign: "center"}}>{zone}</MarketName>
+                        <MarketName style={{ textAlign: "center" }}>
+                          {zone}
+                        </MarketName>
                         <PriceInfo>
                           <ViewButton
                             type="button"
