@@ -56,9 +56,6 @@ const Dashboard = () => {
   return (
     <Layout>
       <IntervalButtonWrapper>
-        <IntervalButton onClick={() => setIntervalType("")}>
-          Default
-        </IntervalButton>
         <IntervalButton onClick={() => setIntervalType("day")}>
           Day
         </IntervalButton>
@@ -77,9 +74,9 @@ const Dashboard = () => {
       </IntervalButtonWrapper>
 
       {
-        <ResponsiveContainer width="90%" height={350}>
-          <LineChart data={plotData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#6963dd" />
+        <ResponsiveContainer width="100%" height={350}>
+          <LineChart data={plotData} width={500}>
+            <CartesianGrid strokeDasharray="1 1" stroke="#6963dd" />
             <XAxis dataKey="label" stroke="#0b570b" />
             <YAxis stroke="#cc415f" />
             <Tooltip />

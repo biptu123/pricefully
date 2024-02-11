@@ -118,7 +118,7 @@ export const FirebaseProvider = (props) => {
     try {
       let price = parseInt(newData.price);
       let newPrice = {};
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 3; i >= 1; i--) {
         const digit = price % 10;
         newPrice[`integer${i}`] = digit;
         price = Math.floor(price / 10);
