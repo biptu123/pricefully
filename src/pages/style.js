@@ -194,7 +194,7 @@ export const IntervalButtonWrapper = styled.div`
 `;
 
 export const IntervalButton = styled.button`
-  background-color: #4caf50; /* Green */
+  background-color: ${(props) => (props.active ? `#4ca3af` : `#4caf50`)};
   border: none;
   color: white;
   padding: 10px 20px;
@@ -207,7 +207,7 @@ export const IntervalButton = styled.button`
   border-radius: 8px;
   transition-duration: 0.4s;
   &:hover {
-    background-color: #45a049;
+    background-color: ${(props) => (props.active ? `#246a74` : `#2f8d32`)};
   }
 `;
 
