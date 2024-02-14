@@ -14,13 +14,17 @@
  
  @font-face {
   font-family: 'HelveticaNowDisplay Medium';
-  src: url('./assets/fonts/HelveticaNowDisplay-MedIta.woff')  format('woff');
+  src: url('./assets/fonts/HelveticaNowDisplay-Medium.woff')  format('woff');
  }
  
+ @font-face {
+  font-family: 'HelveticaNowDisplay Bold';
+  src: url('./assets/fonts/HelveticaNowDisplay-Bold.woff')  format('woff');
+ }
 * {
   padding: 0;
   margin: 0;
-  font-family: 'GabrielSans Medium';
+  font-family: 'HelveticaNowDisplay Medium';
   font-size: 14px;
   text-decoration: none;
   list-style: none;

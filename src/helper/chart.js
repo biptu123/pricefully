@@ -41,7 +41,7 @@ export const groupByYearAndCalculateAverage = (data) => {
   });
 
   averagePrices = averagePrices.reverse();
-  if (!averagePrices[0].price) averagePrices[0].price = 0;
+  if (!averagePrices[0].price) averagePrices[0].price = 400;
   for (let i = 1; i < averagePrices.length; i++) {
     if (!averagePrices[i].price)
       averagePrices[i].price = averagePrices[i - 1].price;
@@ -91,7 +91,7 @@ export const groupByMonthAndCalculateAverage = (data) => {
   });
 
   averagePrices = averagePrices.reverse();
-  if (!averagePrices[0].price) averagePrices[0].price = 0;
+  if (!averagePrices[0].price) averagePrices[0].price = 400;
   for (let i = 1; i < averagePrices.length; i++) {
     if (!averagePrices[i].price)
       averagePrices[i].price = averagePrices[i - 1].price;
@@ -141,7 +141,7 @@ export const groupByWeekAndCalculateAverage = (data) => {
     });
   });
   averagePrices = averagePrices.reverse();
-  if (!averagePrices[0].price) averagePrices[0].price = 0;
+  if (!averagePrices[0].price) averagePrices[0].price = 400;
   for (let i = 1; i < averagePrices.length; i++) {
     if (!averagePrices[i].price)
       averagePrices[i].price = averagePrices[i - 1].price;
@@ -194,7 +194,7 @@ export const groupBySixMonthsAndCalculateAverage = (data) => {
   });
 
   averagePrices = averagePrices.reverse();
-  if (!averagePrices[0].price) averagePrices[0].price = 0;
+  if (!averagePrices[0].price) averagePrices[0].price = 400;
   for (let i = 1; i < averagePrices.length; i++) {
     if (!averagePrices[i].price)
       averagePrices[i].price = averagePrices[i - 1].price;

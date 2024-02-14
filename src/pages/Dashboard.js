@@ -11,11 +11,13 @@ import {
   CartesianGrid,
   Legend,
   Tooltip,
+  AreaChart,
+  Area
 } from "recharts";
 
 // import priceHistory from "../data/priceHistory.json";
 import { getGroupByIntervel } from "../helper/chart";
-import { CurrentPrice, IntervalButton, IntervalButtonWrapper } from "./style";
+import { AvgPrice, CurrentPrice, IntervalButton, IntervalButtonWrapper, Price } from "./style";
 
 const Dashboard = () => {
   const firebase = useFirbase();
@@ -56,9 +58,23 @@ const Dashboard = () => {
   return (
     <Layout>
       {
-        <ResponsiveContainer width="100%" height={350}>
-          <LineChart data={plotData} width={500}>
-            <CartesianGrid strokeDasharray="1 1" stroke="#6963dd" />
+        <ResponsiveContainer width="100%" height="75%">
+          <AreaChart data={plotData}>
+            <CartesianGrid strokeDasharray="1 1" stroke="#6963dd" opacity={0.4} vertical={false}/>
+            <defs>
+              <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="rgba(255, 255, 255, 0.5)" stopOpacity={1}></stop>
+                <stop offset="75%" stopColor="rgba(255, 255, 255, 0.5)" stopOpacity={0.9}></stop>
+              </linearGradient>
+            </defs>
+            
+            <Area
+              type="monotone"
+              dataKey="price"
+              stroke="#245187"
+              activeDot={{ r: 8 }}
+              fill="url(#color)"
+            />
             <XAxis
               dataKey="label"
               stroke="#0b570b"
@@ -69,15 +85,15 @@ const Dashboard = () => {
               axisLine={{ stroke: "#333" }} // Style axis line
               tickLine={{ stroke: "none" }}
             />
-            <YAxis stroke="#cc415f" />
+            <YAxis stroke="#cc415f" 
+              dataKey="price" 
+              axisLine={false}
+              tickLine={false}
+              tickCount={6}
+              domain={[400, 800]}
+              />
             <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="price"
-              stroke="#000000"
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
+          </AreaChart>
         </ResponsiveContainer>
       }
       <IntervalButtonWrapper>
@@ -107,7 +123,13 @@ const Dashboard = () => {
         </IntervalButton>
       </IntervalButtonWrapper>
       {avgPrice && (
-        <CurrentPrice>Current Average Price ₹ {avgPrice}</CurrentPrice>
+        <CurrentPrice>
+          <h1>Current Average Price </h1>
+          <AvgPrice>
+            <span className="rs-symbol">₹</span>
+            {avgPrice}
+          </AvgPrice>
+      </CurrentPrice>
       )}
     </Layout>
   );

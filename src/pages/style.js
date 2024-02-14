@@ -49,23 +49,22 @@ export const DealerCode = styled.p`
 export const GSTN = styled.p`
   width: 100%;
   font-size: 0.9rem;
-  margin-top: -2px;
   color: #288bb1;
 `;
 
 export const Zone = styled.p`
   width: 100%;
-  padding-top: 2px;
+  padding-top: 5px;
   font-size: 0.8rem;
 
   color: #288bb1;
 `;
 
 export const MarketName = styled.p`
-  margin-top: -3px;
+  // margin-top: -3px;
   width: 100%;
   font-size: 1rem;
-  font-family: "GabrielSans Bold";
+  font-family: "HelveticaNowDisplay Bold";
   color: #288bb1;
 `;
 
@@ -81,7 +80,7 @@ export const DealerName = styled.div`
     width: calc(100% - 40px);
     color: #fff;
     line-height: 1.2rem;
-    font-family: "GabrielSans Bold";
+    font-family: "HelveticaNowDisplay Bold";
   }
 `;
 
@@ -213,7 +212,24 @@ export const IntervalButton = styled.button`
 
 export const CurrentPrice = styled.div`
   width: 100%;
-  text-align: center;
-  font-size: 1.5rem;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  & > h1{
+    max-width: 30%;
+    font-size: 25px;
+    color: #1d71b5;
 `;
+export const AvgPrice = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #dd1947;
+
+  font-family: "GabrielSans Bold";
+`;
+
