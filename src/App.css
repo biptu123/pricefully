@@ -4,37 +4,37 @@
   src: url("./assets/fonts/digital.ttf");
 }
 @font-face {
-  font-family: 'GabrielSans Medium';
-  src: url('./assets/fonts/GabrielSans-Trial-Medium.woff')  format('woff');
- }
- @font-face {
-  font-family: 'GabrielSans Bold';
-  src: url('./assets/fonts/GabrielSans-Trial-Bold.woff')  format('woff');
- }
- 
- @font-face {
-  font-family: 'HelveticaNowDisplay Medium';
-  src: url('./assets/fonts/HelveticaNowDisplay-Medium.woff')  format('woff');
- }
- 
- @font-face {
-  font-family: 'HelveticaNowDisplay Bold';
-  src: url('./assets/fonts/HelveticaNowDisplay-Bold.woff')  format('woff');
- }
+  font-family: "GabrielSans Medium";
+  src: url("./assets/fonts/GabrielSans-Trial-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "GabrielSans Bold";
+  src: url("./assets/fonts/GabrielSans-Trial-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HelveticaNowDisplay Medium";
+  src: url("./assets/fonts/HelveticaNowDisplay-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HelveticaNowDisplay Bold";
+  src: url("./assets/fonts/HelveticaNowDisplay-Bold.woff") format("woff");
+}
 * {
   padding: 0;
   margin: 0;
-  font-family: 'HelveticaNowDisplay Medium';
+  font-family: "HelveticaNowDisplay Medium";
   font-size: 14px;
   text-decoration: none;
   list-style: none;
   user-select: none;
 }
-.rs-symbol{
-  font-family: 'HelveticaNowDisplay Medium';
-    font-size: 35px;
-    margin-right: 10px;
-    color:#dd1947;
+.rs-symbol {
+  font-family: "HelveticaNowDisplay Medium";
+  font-size: 35px;
+  margin-right: 10px;
+  color: #dd1947;
 }
 
 body {
@@ -91,6 +91,14 @@ body {
 
 .searchbox {
   position: relative;
+  display: flex;
+  gap: 20px;
+}
+.history-button {
+  cursor: pointer;
+}
+.history-button:hover {
+  transform: scale(0.9);
 }
 
 .searchbox input {
@@ -636,7 +644,7 @@ body {
   border-radius: 10px;
 }
 
-.login-box form{
+.login-box form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -819,7 +827,6 @@ body {
 .chi input:focus {
   outline: none;
 }
-
 
 .grid {
   position: relative;

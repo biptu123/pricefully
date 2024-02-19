@@ -31,6 +31,37 @@ function All() {
     currentAvg,
   } = firebase;
 
+  const updateAll = (e) => {
+    e.preventDefault();
+    if (!containsOnlyNumbers(e.target[0].value)) {
+      window.alert("Please enter only numbers");
+      e.target[0].value = "";
+      return;
+    }
+    const price = Number(e.target[0].value);
+    const updatedData = data;
+    const confirmation = window.confirm(
+      `Price will be updated for all to ${price}`
+    );
+    if (!confirmation) return;
+    Object.keys(data).forEach((key) => {
+      let newData = {
+        ...data[key],
+        price,
+      };
+
+      updatedData[key] = newData;
+
+      updateData(key, newData);
+      e.target[0].value = "";
+    });
+    addPriceHistory(updatedData, {
+      target: "all",
+      targetName: "all",
+      updatedTo: price,
+    });
+  };
+
   const updatePrice = (e) => {
     e.preventDefault();
     if (!containsOnlyNumbers(e.target[0].value)) {
@@ -79,6 +110,14 @@ function All() {
 
   return (
     <Layout>
+      {isLoggedIn ? (
+        <form className="col chi" onSubmit={updateAll}>
+          <input type="text" maxLength={3} />
+          <button className="button-70" type="submit">
+            Update All
+          </button>
+        </form>
+      ) : null}
       <div className="row row-2">
         {data &&
           Object.keys(data).map(

@@ -46,9 +46,11 @@ const Home = () => {
               />
               <label>Password</label>
             </div>
-            <a onClick={handleSubmit}>
-              Submit
-            </a>
+            {!isSubmitting ? (
+              <a onClick={handleSubmit}>Submit</a>
+            ) : (
+              <a>Please wait.....</a>
+            )}
           </form>
         </div>
       </div>

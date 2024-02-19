@@ -12,12 +12,18 @@ import {
   Legend,
   Tooltip,
   AreaChart,
-  Area
+  Area,
 } from "recharts";
 
-// import priceHistory from "../data/priceHistory.json";
+import priceHistory from "../data/priceHistory.json";
 import { getGroupByIntervel } from "../helper/chart";
-import { AvgPrice, CurrentPrice, IntervalButton, IntervalButtonWrapper, Price } from "./style";
+import {
+  AvgPrice,
+  CurrentPrice,
+  IntervalButton,
+  IntervalButtonWrapper,
+  Price,
+} from "./style";
 
 const Dashboard = () => {
   const firebase = useFirbase();
@@ -25,7 +31,7 @@ const Dashboard = () => {
   const [intervalType, setIntervalType] = useState("week");
   const [avgPrice, setAvgPrice] = useState(0);
   const navigate = useNavigate();
-  const { priceHistory, data, tableData, setTableData, currentAvg } = firebase;
+  const { data, tableData, setTableData, currentAvg } = firebase;
 
   useEffect(() => {
     if (!firebase.isLoggedIn) {
@@ -60,14 +66,27 @@ const Dashboard = () => {
       {
         <ResponsiveContainer width="100%" height="75%">
           <AreaChart data={plotData}>
-            <CartesianGrid strokeDasharray="1 1" stroke="#6963dd" opacity={0.4} vertical={false}/>
+            <CartesianGrid
+              strokeDasharray="1 1"
+              stroke="#6963dd"
+              opacity={0.4}
+              vertical={false}
+            />
             <defs>
               <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(255, 255, 255, 0.5)" stopOpacity={1}></stop>
-                <stop offset="75%" stopColor="rgba(255, 255, 255, 0.5)" stopOpacity={0.9}></stop>
+                <stop
+                  offset="0%"
+                  stopColor="rgba(255, 255, 255, 0.5)"
+                  stopOpacity={1}
+                ></stop>
+                <stop
+                  offset="75%"
+                  stopColor="rgba(255, 255, 255, 0.5)"
+                  stopOpacity={0.9}
+                ></stop>
               </linearGradient>
             </defs>
-            
+
             <Area
               type="monotone"
               dataKey="price"
@@ -85,13 +104,14 @@ const Dashboard = () => {
               axisLine={{ stroke: "#333" }} // Style axis line
               tickLine={{ stroke: "none" }}
             />
-            <YAxis stroke="#cc415f" 
-              dataKey="price" 
+            <YAxis
+              stroke="#cc415f"
+              dataKey="price"
               axisLine={false}
               tickLine={false}
               tickCount={6}
-              domain={[400, 800]}
-              />
+              domain={[300, 600]}
+            />
             <Tooltip />
           </AreaChart>
         </ResponsiveContainer>
@@ -129,7 +149,7 @@ const Dashboard = () => {
             <span className="rs-symbol">₹</span>
             {avgPrice}
           </AvgPrice>
-      </CurrentPrice>
+        </CurrentPrice>
       )}
     </Layout>
   );
