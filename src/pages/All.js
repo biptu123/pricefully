@@ -83,7 +83,7 @@ function All() {
     if (!confirmation) return;
     updateData(key, newData);
     e.target[0].value = "";
-    addPriceHistory(updateData, {
+    addPriceHistory(updatedData, {
       target: "dealer",
       targetName: newData["Dealer Name"],
       updatedTo: newData.price,

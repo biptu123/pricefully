@@ -113,8 +113,8 @@ const Header = () => {
           data={tableData}
           pagination
           highlightOnHover
-          paginationPerPage={5}
-          paginationRowsPerPageOptions={[]}
+          paginationPerPage={6}
+          paginationRowsPerPageOptions={[3, 4, 5, 6, 7]}
         />
       </Modal>
     </nav>

@@ -194,6 +194,7 @@ body {
 /* -----------------------sidebar------------------- */
 .container-body .sidebar {
   max-height: 80vh;
+  height: 75vh;
   margin: 0px 0 20px 20px;
   background: linear-gradient(
     to top right,

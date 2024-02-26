@@ -1,6 +1,6 @@
 .responsive-wrapper {
-  height: 150px;
-  padding-bottom: 20px;
+  height: 220px;
+  /* margin-bottom: 20px; */
 }
 .toogle-btn {
   display: none;
@@ -13,7 +13,7 @@
 }
 
 .table-wrapper::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 .table-wrapper::-webkit-scrollbar-thumb {
@@ -23,7 +23,7 @@
 
 .table-wrapper::-webkit-scrollbar-track {
   background-color: #9e75754d;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .table {

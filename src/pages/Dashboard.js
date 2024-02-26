@@ -15,7 +15,7 @@ import {
   Area,
 } from "recharts";
 
-import priceHistory from "../data/priceHistory.json";
+// import priceHistory from "../data/priceHistory.json";
 import { getGroupByIntervel } from "../helper/chart";
 import {
   AvgPrice,
@@ -31,7 +31,7 @@ const Dashboard = () => {
   const [intervalType, setIntervalType] = useState("week");
   const [avgPrice, setAvgPrice] = useState(0);
   const navigate = useNavigate();
-  const { data, tableData, setTableData, currentAvg } = firebase;
+  const { data, tableData, setTableData, currentAvg, priceHistory } = firebase;
 
   useEffect(() => {
     if (!firebase.isLoggedIn) {
@@ -98,10 +98,10 @@ const Dashboard = () => {
               dataKey="label"
               stroke="#0b570b"
               domain={["2023-01-01", "2023-12-31"]}
-              tick={{ fontSize: 12, fill: "#333" }} // Adjust font size and color of ticks
-              tickSize={5} // Adjust size of ticks
-              tickMargin={10} // Adjust margin between ticks and labels
-              axisLine={{ stroke: "#333" }} // Style axis line
+              tick={{ fontSize: 12, fill: "#333" }}
+              tickSize={5}
+              tickMargin={10}
+              axisLine={{ stroke: "#333" }}
               tickLine={{ stroke: "none" }}
             />
             <YAxis
